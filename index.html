@@ -1,0 +1,3760 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Meteorología</title>
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIk1ldGVvcm9sb2fDrWEiLCAic2hvcnRfbmFtZSI6ICJNZXRlb3JvbG9nw61hIiwgInN0YXJ0X3VybCI6ICIuIiwgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsICJiYWNrZ3JvdW5kX2NvbG9yIjogIiNGNEY2RjMiLCAidGhlbWVfY29sb3IiOiAiIzFENTI0MCIsICJpY29ucyI6IFt7InNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7dXRmOCw8c3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDUxMiA1MTInPjxyZWN0IHdpZHRoPSc1MTInIGhlaWdodD0nNTEyJyByeD0nMTEyJyBmaWxsPSclMjMxRDUyNDAnLz48ZyBzdHJva2U9JyUyM0ZGQzkzQScgc3Ryb2tlLXdpZHRoPScxOCcgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJz48bGluZSB4MT0nMTYwJyB5MT0nOTAnIHgyPScxNjAnIHkyPScxMzUnLz48bGluZSB4MT0nNzUnIHkxPScxNzUnIHgyPScxMjAnIHkyPScxNzUnLz48bGluZSB4MT0nMjQ1JyB5MT0nMTc1JyB4Mj0nMjAwJyB5Mj0nMTc1Jy8+PGxpbmUgeDE9Jzk1JyB5MT0nMTEwJyB4Mj0nMTI3JyB5Mj0nMTQyJy8+PGxpbmUgeDE9JzIyNScgeTE9JzExMCcgeDI9JzE5MycgeTI9JzE0MicvPjxsaW5lIHgxPSc5NScgeTE9JzI0MCcgeDI9JzEyNycgeTI9JzIwOCcvPjwvZz48Y2lyY2xlIGN4PScxNjAnIGN5PScxNzUnIHI9JzU1JyBmaWxsPSclMjNGRkM5M0EnLz48ZyBmaWxsPSclMjNGRkZGRkYnPjxjaXJjbGUgY3g9JzIyMCcgY3k9JzMzNScgcj0nNzInLz48Y2lyY2xlIGN4PSczMDAnIGN5PScyOTUnIHI9JzkyJy8+PGNpcmNsZSBjeD0nMzg1JyBjeT0nMzI1JyByPSc3MicvPjxjaXJjbGUgY3g9JzM0MCcgY3k9JzM4MCcgcj0nNjUnLz48Y2lyY2xlIGN4PScyNTUnIGN5PSczOTUnIHI9JzYyJy8+PC9nPjwvc3ZnPiIsICJzaXplcyI6ICJhbnkiLCAidHlwZSI6ICJpbWFnZS9zdmcreG1sIiwgInB1cnBvc2UiOiAiYW55In1dfQ==">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='112' fill='%231D5240'/><g stroke='%23FFC93A' stroke-width='18' stroke-linecap='round'><line x1='160' y1='90' x2='160' y2='135'/><line x1='75' y1='175' x2='120' y2='175'/><line x1='245' y1='175' x2='200' y2='175'/><line x1='95' y1='110' x2='127' y2='142'/><line x1='225' y1='110' x2='193' y2='142'/><line x1='95' y1='240' x2='127' y2='208'/></g><circle cx='160' cy='175' r='55' fill='%23FFC93A'/><g fill='%23FFFFFF'><circle cx='220' cy='335' r='72'/><circle cx='300' cy='295' r='92'/><circle cx='385' cy='325' r='72'/><circle cx='340' cy='380' r='65'/><circle cx='255' cy='395' r='62'/></g></svg>">
+<link rel="shortcut icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='112' fill='%231D5240'/><g stroke='%23FFC93A' stroke-width='18' stroke-linecap='round'><line x1='160' y1='90' x2='160' y2='135'/><line x1='75' y1='175' x2='120' y2='175'/><line x1='245' y1='175' x2='200' y2='175'/><line x1='95' y1='110' x2='127' y2='142'/><line x1='225' y1='110' x2='193' y2='142'/><line x1='95' y1='240' x2='127' y2='208'/></g><circle cx='160' cy='175' r='55' fill='%23FFC93A'/><g fill='%23FFFFFF'><circle cx='220' cy='335' r='72'/><circle cx='300' cy='295' r='92'/><circle cx='385' cy='325' r='72'/><circle cx='340' cy='380' r='65'/><circle cx='255' cy='395' r='62'/></g></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='112' fill='%231D5240'/><g stroke='%23FFC93A' stroke-width='18' stroke-linecap='round'><line x1='160' y1='90' x2='160' y2='135'/><line x1='75' y1='175' x2='120' y2='175'/><line x1='245' y1='175' x2='200' y2='175'/><line x1='95' y1='110' x2='127' y2='142'/><line x1='225' y1='110' x2='193' y2='142'/><line x1='95' y1='240' x2='127' y2='208'/></g><circle cx='160' cy='175' r='55' fill='%23FFC93A'/><g fill='%23FFFFFF'><circle cx='220' cy='335' r='72'/><circle cx='300' cy='295' r='92'/><circle cx='385' cy='325' r='72'/><circle cx='340' cy='380' r='65'/><circle cx='255' cy='395' r='62'/></g></svg>">
+<link rel="mask-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='112' fill='%231D5240'/><g stroke='%23FFC93A' stroke-width='18' stroke-linecap='round'><line x1='160' y1='90' x2='160' y2='135'/><line x1='75' y1='175' x2='120' y2='175'/><line x1='245' y1='175' x2='200' y2='175'/><line x1='95' y1='110' x2='127' y2='142'/><line x1='225' y1='110' x2='193' y2='142'/><line x1='95' y1='240' x2='127' y2='208'/></g><circle cx='160' cy='175' r='55' fill='%23FFC93A'/><g fill='%23FFFFFF'><circle cx='220' cy='335' r='72'/><circle cx='300' cy='295' r='92'/><circle cx='385' cy='325' r='72'/><circle cx='340' cy='380' r='65'/><circle cx='255' cy='395' r='62'/></g></svg>" color="#1D5240">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Meteorología">
+<meta name="theme-color" content="#1D5240">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<style>
+  :root{
+    --verde-oscuro:#1D5240;
+    --verde:#2E5E3F;
+    --verde-claro:#EAF1EC;
+    --tierra:#B8722E;
+    --alerta:#B23B2E;
+    --fondo:#F4F6F3;
+    --tarjeta:#FFFFFF;
+    --texto:#1B211D;
+    --texto-sec:#5B655E;
+    --borde:#E1E7DE;
+    --radio:16px;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--fondo);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    color:var(--texto);
+    display:flex;
+    justify-content:center;
+    min-height:100vh;
+  }
+  .app{
+    width:100%;
+    max-width:430px;
+    min-height:100vh;
+    background:var(--fondo);
+    display:flex;
+    flex-direction:column;
+  }
+  header{
+    position:relative;
+    background:linear-gradient(160deg,var(--verde-oscuro),var(--verde) 85%);
+    color:#fff;
+    padding:22px 20px 26px;
+    border-radius:0 0 22px 22px;
+    box-shadow:0 4px 14px rgba(29,82,64,.18);
+  }
+  header .eyebrow{
+    font-size:11.5px;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    opacity:.78;
+    font-weight:600;
+    margin-bottom:4px;
+  }
+  header .credit{
+    font-size:11px;
+    color:#fff;
+    opacity:.72;
+    font-weight:600;
+    margin-bottom:9px;
+  }
+  header .version{
+    position:absolute;
+    top:16px;
+    right:18px;
+    font-size:10.5px;
+    font-weight:700;
+    letter-spacing:.03em;
+    padding:3px 9px;
+    border-radius:999px;
+    background:rgba(255,255,255,.16);
+    color:#fff;
+  }
+  header h1{
+    margin:0;
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:-.01em;
+  }
+
+  .search-wrap{
+    position:relative;
+    padding:14px 16px 6px;
+    display:flex;
+    gap:8px;
+    align-items:center;
+  }
+  .search-input-wrap{
+    position:relative;
+    flex:1;
+    display:flex;
+    align-items:center;
+    background:var(--tarjeta);
+    border:1px solid var(--borde);
+    border-radius:999px;
+    padding:0 12px;
+    box-shadow:0 1px 4px rgba(27,33,29,.04);
+  }
+  .search-input-wrap:focus-within{
+    border-color:var(--verde-oscuro);
+    box-shadow:0 0 0 2px rgba(29,82,64,.12);
+  }
+  .search-icon{
+    font-size:14px;
+    opacity:.65;
+    margin-right:6px;
+  }
+  #searchInput{
+    flex:1;
+    border:none;
+    outline:none;
+    background:transparent;
+    padding:10px 0;
+    font-size:14.5px;
+    color:var(--texto);
+    font-family:inherit;
+    min-width:0;
+  }
+  #searchInput::placeholder{color:var(--texto-sec);}
+  .search-clear{
+    border:none;
+    background:transparent;
+    color:var(--texto-sec);
+    font-size:20px;
+    line-height:1;
+    padding:0 4px;
+    cursor:pointer;
+  }
+  .geo-btn{
+    flex:0 0 auto;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    border:1px solid var(--verde-oscuro);
+    background:var(--tarjeta);
+    color:var(--verde-oscuro);
+    font-size:18px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .geo-btn:active{background:var(--verde-claro);}
+  .geo-btn.loading{opacity:.6;}
+
+  .search-suggestions{
+    position:absolute;
+    top:100%;
+    left:16px;
+    right:16px;
+    background:var(--tarjeta);
+    border:1px solid var(--borde);
+    border-radius:12px;
+    box-shadow:0 6px 20px rgba(27,33,29,.12);
+    z-index:20;
+    max-height:280px;
+    overflow-y:auto;
+    display:none;
+  }
+  .search-suggestions.show{display:block;}
+  .suggestion{
+    padding:11px 14px;
+    border-bottom:1px solid var(--borde);
+    cursor:pointer;
+    font-size:14px;
+  }
+  .suggestion:last-child{border-bottom:none;}
+  .suggestion:hover,.suggestion.hl{background:var(--verde-claro);}
+  .suggestion .sug-name{
+    font-weight:600;
+    color:var(--texto);
+  }
+  .suggestion .sug-detail{
+    font-size:11.5px;
+    color:var(--texto-sec);
+    margin-top:2px;
+  }
+  .suggestion.empty{
+    color:var(--texto-sec);
+    font-style:italic;
+    cursor:default;
+    text-align:center;
+  }
+
+  main{
+    padding:6px 16px 20px;
+    flex:1;
+  }
+
+  .card{
+    background:var(--tarjeta);
+    border-radius:var(--radio);
+    border:1px solid var(--borde);
+    padding:20px;
+    margin-top:10px;
+    box-shadow:0 2px 10px rgba(27,33,29,.05);
+  }
+
+  .station-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+  }
+  .loc-detail{
+    font-size:12.5px;
+    color:var(--texto-sec);
+    margin-top:-6px;
+    margin-bottom:10px;
+  }
+  .station-name{
+    font-size:16px;
+    font-weight:700;
+    color:var(--verde-oscuro);
+  }
+  .updated{
+    font-size:11.5px;
+    color:var(--texto-sec);
+  }
+  .updated.stale{color:var(--tierra);}
+
+  .temp-row{
+    display:flex;
+    align-items:flex-end;
+    gap:10px;
+    margin:14px 0 4px;
+  }
+  .temp-value{
+    font-size:64px;
+    font-weight:700;
+    line-height:1;
+    letter-spacing:-.02em;
+    color:var(--texto);
+  }
+  .temp-unit{
+    font-size:26px;
+    font-weight:600;
+    color:var(--texto-sec);
+    margin-bottom:6px;
+  }
+  .feels{
+    font-size:13px;
+    color:var(--texto-sec);
+    margin-bottom:16px;
+  }
+
+  .divider{
+    height:1px;
+    background:var(--borde);
+    margin:6px 0 16px;
+  }
+
+  .metrics{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .metric{
+    background:var(--verde-claro);
+    border-radius:12px;
+    padding:14px 12px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:4px;
+  }
+  .metric .icon{
+    width:30px;
+    height:30px;
+    margin-bottom:2px;
+  }
+  .metric .value{
+    font-size:20px;
+    font-weight:700;
+    color:var(--verde-oscuro);
+  }
+  .metric .label{
+    font-size:11.5px;
+    color:var(--texto-sec);
+    font-weight:600;
+  }
+  .metric .sub{
+    font-size:11px;
+    color:var(--texto-sec);
+  }
+  .metric.warn{background:#FBEDE4;}
+  .metric.warn .value{color:var(--tierra);}
+  .metric.alert{background:#F8E4E1;}
+  .metric.alert .value{color:var(--alerta);}
+
+  .risk-banner{
+    margin-top:14px;
+    padding:11px 13px;
+    border-radius:10px;
+    font-size:12.5px;
+    font-weight:600;
+    display:none;
+    align-items:center;
+    gap:8px;
+  }
+  .risk-banner.show{display:flex;}
+  .risk-banner.medio{background:#FBEDE4; color:var(--tierra);}
+  .risk-banner.alto{background:#F8E4E1; color:var(--alerta);}
+
+  .refresh-btn{
+    width:100%;
+    margin-top:14px;
+    padding:13px;
+    border-radius:12px;
+    border:none;
+    background:var(--verde-oscuro);
+    color:#fff;
+    font-size:14.5px;
+    font-weight:700;
+    cursor:pointer;
+  }
+  .refresh-btn:active{opacity:.85;}
+  .refresh-btn:disabled{opacity:.55;}
+
+  .pdf-btn{
+    width:100%;
+    margin-top:10px;
+    padding:13px;
+    border-radius:12px;
+    border:1px solid var(--verde-oscuro);
+    background:var(--tarjeta);
+    color:var(--verde-oscuro);
+    font-size:14.5px;
+    font-weight:700;
+    cursor:pointer;
+  }
+  .pdf-btn:active{opacity:.85;}
+  .pdf-btn:disabled{opacity:.55;}
+
+  /* ---- Previsión 12 h ---- */
+  .forecast-btn{
+    width:100%;
+    margin-top:10px;
+    padding:13px;
+    border-radius:12px;
+    border:1px solid var(--verde-oscuro);
+    background:var(--tarjeta);
+    color:var(--verde-oscuro);
+    font-size:14.5px;
+    font-weight:700;
+    cursor:pointer;
+  }
+  .forecast-btn:active{opacity:.85;}
+  .forecast-btn.open{background:var(--verde-oscuro); color:#fff;}
+
+  .forecast-panel{margin-top:2px;}
+  .fc-card{margin-top:10px;}
+  .fc-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:8px;
+    margin-bottom:2px;
+  }
+  .fc-title{font-size:15px; font-weight:700; color:var(--verde-oscuro);}
+  .fc-sub{font-size:11.5px; color:var(--texto-sec); white-space:nowrap;}
+  .fc-loading{font-size:13px; color:var(--texto-sec); padding:20px 0; text-align:center;}
+  .fc-block{margin-top:16px;}
+  .fc-block:first-child{margin-top:10px;}
+  .fc-block-title{
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--texto);
+    margin-bottom:6px;
+  }
+  .fc-chart-wrap{position:relative; width:100%; height:210px;}
+  .sum-rain-total{
+    font-size:26px;
+    font-weight:700;
+    color:var(--texto-sec);
+    letter-spacing:-.01em;
+    margin:2px 0 4px;
+  }
+  .sum-rain-total.has-rain{color:#1565C0;}
+
+  .fc-dir-strip{
+    display:flex;
+    gap:6px;
+    overflow-x:auto;
+    padding:4px 2px 6px;
+    scrollbar-width:none;
+  }
+  .fc-dir-strip::-webkit-scrollbar{display:none;}
+  .dir-cell{
+    flex:0 0 auto;
+    width:46px;
+    background:var(--verde-claro);
+    border-radius:10px;
+    padding:8px 4px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:2px;
+  }
+  .dir-hour{font-size:10.5px; font-weight:700; color:var(--texto-sec);}
+  .dir-arrow{width:22px; height:22px; transform-origin:50% 50%;}
+  .dir-card{font-size:11px; font-weight:700; color:var(--verde-oscuro); line-height:1;}
+  .dir-deg{font-size:9.5px; color:var(--texto-sec);}
+  .fc-note{font-size:10.5px; color:var(--texto-sec); margin-top:6px; line-height:1.4;}
+
+  /* ---- Previsión 3 días · tarjetas resumen por día ---- */
+  .d3-daycards{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:8px;
+  }
+  .d3-day{
+    background:var(--verde-claro);
+    border-radius:12px;
+    padding:10px 6px 8px;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:2px;
+  }
+  .d3-day .d3-dow{
+    font-size:11.5px;
+    font-weight:700;
+    color:var(--verde-oscuro);
+    text-transform:capitalize;
+  }
+  .d3-day .d3-date{
+    font-size:10.5px;
+    color:var(--texto-sec);
+    margin-bottom:4px;
+  }
+  .d3-day .d3-icon{ font-size:22px; line-height:1; }
+  .d3-day .d3-tmax{
+    font-size:16px; font-weight:700; color:var(--tierra);
+  }
+  .d3-day .d3-tmin{
+    font-size:12.5px; color:var(--texto-sec); font-weight:600;
+  }
+  .d3-day .d3-rain{
+    font-size:10.5px; color:#1565C0; font-weight:700; margin-top:2px;
+  }
+  .d3-day .d3-wind{
+    font-size:10.5px; color:var(--texto-sec); font-weight:600;
+  }
+
+  .error-box{
+    display:none;
+    margin-top:14px;
+    padding:12px 14px;
+    border-radius:10px;
+    background:#F8E4E1;
+    color:var(--alerta);
+    font-size:13px;
+    font-weight:600;
+  }
+  .error-box.show{display:block;}
+
+  footer{
+    padding:8px 20px 22px;
+    font-size:11px;
+    color:var(--texto-sec);
+    line-height:1.5;
+    text-align:center;
+  }
+
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .spinning{animation:spin 1s linear infinite;}
+
+  /* ---- Incendios activos (puntos de calor NASA) ---- */
+  .fire-btn{
+    width:100%;
+    margin-top:10px;
+    padding:13px;
+    border-radius:12px;
+    border:1px solid var(--alerta);
+    background:var(--tarjeta);
+    color:var(--alerta);
+    font-size:14.5px;
+    font-weight:700;
+    cursor:pointer;
+  }
+  .fire-btn:active{opacity:.85;}
+  .fire-btn.open{background:var(--alerta); color:#fff;}
+  .fire-panel{margin-top:2px;}
+  .fire-controls{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin-top:2px;
+  }
+  .fire-controls .field label{
+    display:block;
+    font-size:11px;
+    font-weight:700;
+    color:var(--texto-sec);
+    margin-bottom:3px;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+  }
+  .fire-controls .field select{
+    width:100%;
+    padding:9px 10px;
+    border-radius:10px;
+    border:1px solid var(--borde);
+    background:var(--tarjeta);
+    color:var(--texto);
+    font-size:13.5px;
+    font-family:inherit;
+    -webkit-appearance:none;
+    appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M0 0l5 6 5-6z' fill='%235B655E'/></svg>");
+    background-repeat:no-repeat;
+    background-position:right 10px center;
+    padding-right:26px;
+  }
+  #fireMap{
+    width:100%;
+    height:58vh;
+    min-height:340px;
+    max-height:560px;
+    border-radius:12px;
+    margin-top:12px;
+    border:1px solid var(--borde);
+    background:#e6edea;
+  }
+  .fire-legend{
+    display:flex;
+    gap:12px 14px;
+    flex-wrap:wrap;
+    margin-top:10px;
+    font-size:11.5px;
+    color:var(--texto-sec);
+  }
+  .fire-legend span{display:flex; align-items:center; gap:6px;}
+  .fire-legend i{
+    display:inline-block;
+    border-radius:2px;
+    border:1px solid rgba(0,0,0,.35);
+  }
+  .fire-legend i.red   { width:16px; height:16px; background:#D7263D; }
+  .fire-legend i.orange{ width:12px; height:12px; background:#EF6C00; }
+  .fire-legend i.yellow{ width:11px; height:11px; background:#FFD400; }
+  .fire-legend i.gray  { width:9px;  height:9px;  background:#9E9E9E; }
+
+  /* Focos activos: cuadros por edad */
+  .fire-sq{
+    display:block;
+    box-sizing:border-box;
+    border-radius:2px;
+    border:1.5px solid rgba(0,0,0,.55);
+    box-shadow:0 0 4px rgba(0,0,0,.35);
+  }
+  .fire-sq.red   { width:24px; height:24px; background:#D7263D;
+                   animation:firePulseFast 650ms ease-in-out infinite; }
+  .fire-sq.orange{ width:14px; height:14px; background:#EF6C00;
+                   animation:firePulseSlow 1100ms ease-in-out infinite; }
+  .fire-sq.yellow{ width:12px; height:12px; background:#FFD400; }
+  .fire-sq.gray  { width:10px; height:10px; background:#9E9E9E; opacity:.85; }
+
+  @keyframes firePulseFast{
+    0%,100%{opacity:1;   transform:scale(1);}
+    50%    {opacity:.18; transform:scale(.55);}
+  }
+  @keyframes firePulseSlow{
+    0%,100%{opacity:1;   transform:scale(1);}
+    50%    {opacity:.28; transform:scale(.7);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .fire-sq.red, .fire-sq.orange{ animation:none; }
+  }
+  .fire-status{
+    font-size:12px;
+    color:var(--texto-sec);
+    margin-top:8px;
+    line-height:1.45;
+  }
+  .fire-status.err{color:var(--alerta);}
+  /* Ajustes Leaflet en móvil: controles algo más grandes */
+  .leaflet-touch .leaflet-bar a{width:34px; height:34px; line-height:34px; font-size:20px;}
+  .leaflet-control-attribution{font-size:9.5px;}
+
+  /* ---- Rayos en tiempo real (Blitzortung) ---- */
+  .thunder-btn{
+    width:100%;
+    margin-top:10px;
+    padding:13px;
+    border-radius:12px;
+    border:1px solid #6f2fbd;
+    background:var(--tarjeta);
+    color:#6f2fbd;
+    font-size:14.5px;
+    font-weight:700;
+    cursor:pointer;
+  }
+  .thunder-btn:active{opacity:.85;}
+  .thunder-btn.open{background:#6f2fbd; color:#fff;}
+  .thunder-panel{margin-top:2px;}
+  #thunderMap{
+    width:100%;
+    height:58vh;
+    min-height:340px;
+    max-height:560px;
+    border-radius:12px;
+    margin-top:12px;
+    border:1px solid var(--borde);
+    background:#e6edea;
+  }
+  .thunder-status{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:12.5px;
+    padding:8px 10px;
+    border:1px solid var(--borde);
+    border-radius:10px;
+    background:#fbfcfb;
+    color:var(--texto-sec);
+    margin-top:10px;
+  }
+  .thunder-status .dot{
+    width:9px; height:9px; border-radius:50%;
+    background:#e04b4b; box-shadow:0 0 5px #e04b4b;
+    flex:0 0 auto;
+  }
+  .thunder-status.ok .dot{ background:#3ec46d; box-shadow:0 0 6px #3ec46d; }
+  .thunder-counters{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:8px;
+    margin-top:10px;
+  }
+  .thunder-counter{
+    background:var(--verde-claro);
+    border-radius:10px;
+    padding:8px 6px;
+    text-align:center;
+  }
+  .thunder-counter .val{
+    font-size:18px; font-weight:700; color:var(--verde-oscuro);
+    line-height:1;
+  }
+  .thunder-counter .lab{
+    font-size:10.5px; color:var(--texto-sec); font-weight:600;
+    margin-top:3px;
+  }
+  .thunder-last{
+    font-size:12px; color:var(--texto-sec);
+    margin-top:8px;
+  }
+  .thunder-last b{color:var(--texto);}
+  .thunder-legend{
+    display:flex;
+    gap:12px 14px;
+    flex-wrap:wrap;
+    margin-top:10px;
+    font-size:11.5px;
+    color:var(--texto-sec);
+  }
+  .thunder-legend span{display:flex; align-items:center; gap:6px;}
+  .thunder-legend i{
+    display:inline-block;
+    width:12px; height:12px; border-radius:50%;
+    border:1px solid rgba(0,0,0,.2);
+  }
+  .thunder-legend i.fresh { background:#c66cff; box-shadow:0 0 5px #c66cff;}
+  .thunder-legend i.old   { background:#e02020; }
+  .thunder-legend i.older { background:#ffd54a; }
+  .thunder-legend i.oldest{ background:#3a7bd5; }
+
+  .rayo-mk{
+    width:14px; height:14px; border-radius:50%;
+    background:radial-gradient(circle,#fff 0%,#c66cff 40%,rgba(160,60,220,0) 70%);
+    box-shadow:0 0 12px #c66cff,0 0 24px #8a2be2;
+    animation:rayo-pulse 1s ease-out;
+    cursor:pointer;
+  }
+  .rayo-mk.old{
+    background:radial-gradient(circle,#ff8080 0%,#e02020 50%,rgba(224,32,32,0) 72%);
+    box-shadow:0 0 6px #e02020;
+    animation:none; opacity:.9;
+  }
+  .rayo-mk.older{
+    background:radial-gradient(circle,#fff2a8 0%,#ffd54a 50%,rgba(255,213,74,0) 72%);
+    box-shadow:0 0 6px #ffd54a;
+    animation:none; opacity:.85;
+  }
+  .rayo-mk.oldest{
+    background:radial-gradient(circle,#a8d4ff 0%,#3a7bd5 50%,rgba(58,123,213,0) 72%);
+    box-shadow:0 0 5px #3a7bd5;
+    animation:none; opacity:.7;
+  }
+  @keyframes rayo-pulse{
+    0%  {transform:scale(.3); opacity:0}
+    30% {transform:scale(1.6); opacity:1}
+    100%{transform:scale(1);  opacity:.9}
+  }
+  .rayo-halo{
+    width:60px; height:60px; border-radius:50%;
+    border:2px solid #c66cff; opacity:.9;
+    animation:rayo-halo 1.2s ease-out forwards;
+    pointer-events:none !important;
+  }
+  @keyframes rayo-halo{
+    0%  {transform:scale(.1); opacity:1}
+    100%{transform:scale(1.4); opacity:0}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .rayo-mk, .rayo-halo{ animation:none; }
+  }
+
+  /* ---- Viento sobre el mapa ---- */
+  .wind-btn{
+    width:100%;
+    margin-top:10px;
+    padding:13px;
+    border-radius:12px;
+    border:1px solid #2472a8;
+    background:var(--tarjeta);
+    color:#2472a8;
+    font-size:14.5px;
+    font-weight:700;
+    cursor:pointer;
+  }
+  .wind-btn:active{opacity:.85;}
+  .wind-btn.open{background:#2472a8; color:#fff;}
+  .wind-panel{margin-top:2px;}
+  #windMap{
+    width:100%;
+    height:58vh;
+    min-height:340px;
+    max-height:560px;
+    border-radius:12px;
+    margin-top:12px;
+    border:1px solid var(--borde);
+    background:#e6edea;
+  }
+  .wind-slider-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:10px;
+  }
+  .wind-slider-row input[type=range]{
+    flex:1; min-width:0;
+    accent-color:#2472a8;
+  }
+  .wind-slider-row button{
+    flex:0 0 auto;
+    width:38px; height:34px;
+    border-radius:8px;
+    border:1px solid #2472a8;
+    background:var(--tarjeta);
+    color:#2472a8;
+    font-size:16px;
+    cursor:pointer;
+  }
+  .wind-slider-row button.playing{background:#2472a8; color:#fff;}
+  .wind-hora-label{
+    text-align:center;
+    font-size:12.5px;
+    color:var(--texto-sec);
+    margin-top:6px;
+  }
+  .wind-hora-label b{color:var(--texto);}
+  .wind-hora-label .tag{
+    display:inline-block;
+    margin-left:6px;
+    padding:1px 6px;
+    border-radius:8px;
+    font-size:10.5px;
+    font-weight:700;
+  }
+  .wind-hora-label .tag.hist{background:#f3d3a5;color:#7a5c00;}
+  .wind-hora-label .tag.futu{background:#cfe6d3;color:#1e4c30;}
+  .wind-legend{
+    display:flex;
+    gap:10px 12px;
+    flex-wrap:wrap;
+    margin-top:10px;
+    font-size:11.5px;
+    color:var(--texto-sec);
+  }
+  .wind-legend span{display:flex; align-items:center; gap:5px;}
+  .wind-legend i{
+    display:inline-block;
+    width:14px; height:6px;
+    border-radius:2px;
+    border:1px solid rgba(0,0,0,.15);
+  }
+  .wind-check{
+    display:flex;
+    gap:6px; align-items:center;
+    font-size:12.5px;
+    color:var(--texto-sec);
+    padding:6px 0 0;
+  }
+  .wind-check input{accent-color:#2472a8;}
+  .wind-check-row{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+    margin-top:2px;
+  }
+
+  /* Etiquetas de la malla (dentro de divIcon) */
+  .v-etq{
+    display:inline-flex;
+    align-items:center;
+    gap:3px;
+    padding:2px 5px;
+    border-radius:8px;
+    background:rgba(255,255,255,.88);
+    border:1px solid rgba(0,0,0,.2);
+    box-shadow:0 1px 2px rgba(0,0,0,.15);
+    font-size:10.5px;
+    font-weight:700;
+    color:#1B211D;
+    white-space:nowrap;
+    transform:translate(-50%, -50%);
+  }
+  .v-etq .v-flecha{
+    display:inline-block;
+    font-size:13px;
+    line-height:1;
+    color:#2472a8;
+  }
+  .v-etq .v-racha{ color:#c62828; font-size:9.5px; }
+
+  /* ---- Botón flotante "Volver al inicio" ---- */
+  .back-top-btn{
+    position:fixed;
+    right:16px;
+    bottom:18px;
+    z-index:1000;
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    border:none;
+    background:var(--verde-oscuro);
+    color:#fff;
+    font-size:22px;
+    line-height:1;
+    box-shadow:0 4px 14px rgba(27,33,29,.28);
+    cursor:pointer;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:0;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .back-top-btn.show{display:flex;}
+  .back-top-btn:active{opacity:.85;}
+  @supports(padding: max(0px)){
+    .back-top-btn{ bottom:max(18px, env(safe-area-inset-bottom)); }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header>
+    <h1>Meteorología</h1>
+    <div class="version">v22</div>
+  </header>
+
+  <div class="search-wrap">
+    <div class="search-input-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="search" id="searchInput" placeholder="Buscar localidad…" autocomplete="off" autocorrect="off" spellcheck="false">
+      <button class="search-clear" id="searchClear" style="display:none;" aria-label="Borrar">×</button>
+    </div>
+    <button class="geo-btn" id="geoBtn" title="Usar mi ubicación" aria-label="Usar mi ubicación">📍</button>
+    <div class="search-suggestions" id="searchSuggestions"></div>
+  </div>
+
+  <main>
+    <div class="card">
+      <div class="station-row">
+        <div class="station-name" id="stationName">—</div>
+        <div class="updated" id="updated">Cargando…</div>
+      </div>
+      <div class="loc-detail" id="locDetail" style="display:none;"></div>
+
+      <div class="temp-row">
+        <span class="temp-value" id="temp">--</span><span class="temp-unit">°C</span>
+      </div>
+      <div class="feels" id="feels">&nbsp;</div>
+
+      <div class="divider"></div>
+
+      <div class="metrics">
+        <div class="metric" id="humidityBox">
+          <svg class="icon" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2C12 2 5 11.2 5 15.5C5 19.09 8.13 22 12 22C15.87 22 19 19.09 19 15.5C19 11.2 12 2 12 2Z" stroke="#1D5240" stroke-width="1.6" stroke-linejoin="round"/>
+          </svg>
+          <div class="value" id="humidity">--%</div>
+          <div class="label">Humedad relativa</div>
+        </div>
+
+        <div class="metric" id="windBox">
+          <svg class="icon" viewBox="0 0 24 24" id="compass">
+            <circle cx="12" cy="12" r="10.3" stroke="#1D5240" stroke-width="1.3" fill="none"/>
+            <text x="12" y="5" font-size="4.6" fill="#1D5240" text-anchor="middle" font-weight="700">N</text>
+            <g id="needle" transform="rotate(0 12 12)">
+              <path d="M12 4.5 L14.6 13.5 L12 11.7 L9.4 13.5 Z" fill="#B8722E"/>
+            </g>
+          </svg>
+          <div class="value" id="windSpeed">-- km/h</div>
+          <div class="label" id="windDir">--</div>
+          <div class="sub" id="windGust"></div>
+        </div>
+      </div>
+
+      <div class="risk-banner" id="riskBanner"></div>
+    </div>
+
+    <button class="refresh-btn" id="refreshBtn">Actualizar ahora</button>
+
+    <button class="forecast-btn" id="summaryBtn">📊 Resumen últimas 2 h</button>
+    <div class="forecast-panel" id="summaryPanel" style="display:none;">
+      <div class="card fc-card">
+        <div class="fc-head">
+          <div class="fc-title" id="sumTitle">Últimas 2 horas</div>
+          <div class="fc-sub" id="sumSub">—</div>
+        </div>
+        <div class="fc-loading" id="sumLoading">Cargando resumen…</div>
+        <div class="fc-body" id="sumBody" style="display:none;">
+
+          <div class="fc-block">
+            <div class="fc-block-title">🌡️ Temperatura y sensación térmica</div>
+            <div class="fc-chart-wrap"><canvas id="sumChartTemp"></canvas></div>
+          </div>
+
+          <div class="fc-block">
+            <div class="fc-block-title">💧 Humedad relativa</div>
+            <div class="fc-chart-wrap"><canvas id="sumChartHum"></canvas></div>
+          </div>
+
+          <div class="fc-block">
+            <div class="fc-block-title">🌬️ Velocidad del viento y rachas</div>
+            <div class="fc-chart-wrap"><canvas id="sumChartWind"></canvas></div>
+          </div>
+
+          <div class="fc-block" id="sumRainBlock">
+            <div class="fc-block-title">🌧️ Precipitación</div>
+            <div class="sum-rain-total" id="sumRainTotal">— mm</div>
+            <div class="fc-chart-wrap" id="sumRainChartWrap" style="display:none;"><canvas id="sumChartRain"></canvas></div>
+            <div class="fc-note" id="sumRainNote"></div>
+          </div>
+
+          <div class="fc-block">
+            <div class="fc-block-title">🧭 Dirección del viento</div>
+            <div class="fc-dir-strip" id="sumDirStrip"></div>
+            <div class="fc-note">La flecha señala la dirección hacia la que sopla el viento.</div>
+          </div>
+
+          <button class="pdf-btn" id="summaryPdfBtn" style="margin-top:18px;">📄 Descargar resumen en PDF</button>
+
+        </div>
+      </div>
+    </div>
+
+    <button class="forecast-btn" id="forecastBtn">🕐 Previsión próximas 12 h</button>
+    <div class="forecast-panel" id="forecastPanel" style="display:none;">
+      <div class="card fc-card">
+        <div class="fc-head">
+          <div class="fc-title" id="fcTitle">Previsión horaria</div>
+          <div class="fc-sub" id="fcSub">—</div>
+        </div>
+        <div class="fc-loading" id="fcLoading">Cargando previsión…</div>
+        <div class="fc-body" id="fcBody" style="display:none;">
+
+          <div class="risk-banner" id="fcRisk"></div>
+
+          <div class="fc-block">
+            <div class="fc-block-title">🌡️ Temperatura y sensación térmica</div>
+            <div class="fc-chart-wrap"><canvas id="chartTemp"></canvas></div>
+          </div>
+
+          <div class="fc-block">
+            <div class="fc-block-title">💧 Humedad relativa</div>
+            <div class="fc-chart-wrap"><canvas id="chartHum"></canvas></div>
+          </div>
+
+          <div class="fc-block">
+            <div class="fc-block-title">🌬️ Velocidad del viento y rachas</div>
+            <div class="fc-chart-wrap"><canvas id="chartWind"></canvas></div>
+          </div>
+
+          <div class="fc-block">
+            <div class="fc-block-title">🌧️ Probabilidad de lluvia y tormenta</div>
+            <div class="fc-chart-wrap"><canvas id="chartRain"></canvas></div>
+            <div class="fc-note">Lluvia: probabilidad de precipitación del modelo. Tormenta: estimación a partir del código de tiempo WMO y del CAPE (energía convectiva).</div>
+          </div>
+
+          <div class="fc-block">
+            <div class="fc-block-title">🧭 Dirección del viento</div>
+            <div class="fc-dir-strip" id="dirStrip"></div>
+            <div class="fc-note">La flecha señala la dirección hacia la que sopla el viento.</div>
+          </div>
+
+          <button class="pdf-btn" id="forecastPdfBtn" style="margin-top:18px;">📄 Descargar previsión en PDF</button>
+
+        </div>
+      </div>
+    </div>
+
+    <button class="forecast-btn" id="forecast3dBtn">🗓 Previsión próximos 3 días</button>
+    <div class="forecast-panel" id="forecast3dPanel" style="display:none;">
+      <div class="card fc-card">
+        <div class="fc-head">
+          <div class="fc-title" id="fc3dTitle">Previsión a 3 días</div>
+          <div class="fc-sub" id="fc3dSub">—</div>
+        </div>
+        <div class="fc-loading" id="fc3dLoading">Cargando previsión…</div>
+        <div class="fc-body" id="fc3dBody" style="display:none;">
+
+          <div class="fc-block">
+            <div class="fc-block-title">📅 Resumen por día</div>
+            <div class="d3-daycards" id="d3DayCards"></div>
+          </div>
+
+          <div class="fc-block">
+            <div class="fc-block-title">🌡️ Temperatura horaria (máx/mín por día)</div>
+            <div class="fc-chart-wrap" style="height:230px;"><canvas id="chart3dTemp"></canvas></div>
+          </div>
+
+          <div class="fc-block">
+            <div class="fc-block-title">💧 Humedad relativa</div>
+            <div class="fc-chart-wrap" style="height:210px;"><canvas id="chart3dHum"></canvas></div>
+          </div>
+
+          <div class="fc-block">
+            <div class="fc-block-title">🌬️ Velocidad del viento y rachas</div>
+            <div class="fc-chart-wrap" style="height:210px;"><canvas id="chart3dWind"></canvas></div>
+          </div>
+
+          <div class="fc-block">
+            <div class="fc-block-title">🌧️ Probabilidad y cantidad de lluvia</div>
+            <div class="fc-chart-wrap" style="height:210px;"><canvas id="chart3dRain"></canvas></div>
+            <div class="fc-note">Barras: probabilidad de precipitación (%). Línea: precipitación acumulada por hora (mm).</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <button class="wind-btn" id="windBtn">🌬 Viento sobre el mapa</button>
+    <div class="wind-panel" id="windPanel" style="display:none;">
+      <div class="card">
+        <div class="fc-head">
+          <div class="fc-title">Viento · Open-Meteo</div>
+          <div class="fc-sub" id="windSub">Sin cargar</div>
+        </div>
+
+        <div class="wind-check-row">
+          <label class="wind-check"><input type="checkbox" id="windFlujo" checked> Flujo animado</label>
+          <label class="wind-check"><input type="checkbox" id="windRachas"> Rachas</label>
+        </div>
+
+        <div class="fire-controls" style="margin-top:10px;">
+          <button class="pdf-btn" id="btnWindCargar" style="margin:0;">🌬 Cargar viento</button>
+          <button class="pdf-btn" id="btnWindSalamanca" style="margin:0;">📍 Salamanca</button>
+        </div>
+
+        <div id="windMap"></div>
+
+        <div class="wind-slider-row">
+          <button id="btnWindPlay" title="Animar horas">▶</button>
+          <input type="range" id="windHora" min="0" max="0" value="0" step="1" disabled>
+        </div>
+        <div class="wind-hora-label" id="windHoraLabel">—</div>
+
+        <div class="wind-legend">
+          <span><i style="background:#2D9CDB;"></i>&lt;10</span>
+          <span><i style="background:#27AE60;"></i>10–20</span>
+          <span><i style="background:#F2C94C;"></i>20–30</span>
+          <span><i style="background:#F2994A;"></i>30–40</span>
+          <span><i style="background:#D7263D;"></i>&gt;40 km/h</span>
+        </div>
+
+        <div class="fc-note" style="margin-top:8px;">
+          Malla regular sobre el encuadre visible. Una única llamada a Open-Meteo trae la previsión horaria de todos los puntos; después mover el control de horas es instantáneo. Con «Flujo animado» se ve el arrastre estilo Windy.
+        </div>
+      </div>
+    </div>
+
+    <button class="fire-btn" id="fireBtn">🔥 Incendios activos ahora mismo</button>
+    <div class="fire-panel" id="firePanel" style="display:none;">
+      <div class="card">
+        <div class="fc-head">
+          <div class="fc-title">Puntos de calor · NASA FIRMS</div>
+          <div class="fc-sub">VIIRS / MODIS · GIBS</div>
+        </div>
+        <div class="fire-controls">
+          <div class="field">
+            <label>Periodo</label>
+            <select id="firePeriodo">
+              <option value="today">Hoy (24 h)</option>
+              <option value="week" selected>Última semana</option>
+              <option value="month">Último mes</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Satélite</label>
+            <select id="fireSensor">
+              <option value="all" selected>Todos</option>
+              <option value="viirs">VIIRS (375 m)</option>
+              <option value="modis">MODIS (1 km)</option>
+              <option value="s3">Sentinel-3</option>
+            </select>
+          </div>
+        </div>
+        <div id="fireMap"></div>
+        <div class="fire-legend">
+          <span><i class="red"></i>&lt; 6 h</span>
+          <span><i class="orange"></i>6–12 h</span>
+          <span><i class="yellow"></i>1–3 días</span>
+          <span><i class="gray"></i>+ 3 días</span>
+        </div>
+        <div class="fire-status" id="fireStatus">Sin consultar todavía.</div>
+        <button class="pdf-btn" id="fireReloadBtn" style="margin-top:10px;">🔄 Actualizar focos en esta vista</button>
+        <div class="fc-note" style="margin-top:8px;">
+          Fuente: <b>EFFIS / GWIS (Copernicus)</b> con puntos VIIRS/MODIS/Sentinel-3. El servicio a veces tarda hasta un minuto en responder. Se consultan solo los focos del encuadre visible.
+        </div>
+      </div>
+    </div>
+
+    <button class="thunder-btn" id="thunderBtn">⚡ Rayos en tiempo real</button>
+    <div class="thunder-panel" id="thunderPanel" style="display:none;">
+      <div class="card">
+        <div class="fc-head">
+          <div class="fc-title">Blitzortung.org</div>
+          <div class="fc-sub" id="thunderRegionLabel">Europa / África</div>
+        </div>
+
+        <div class="fire-controls">
+          <div class="field">
+            <label>Región</label>
+            <select id="thunderRegion">
+              <option value="eu" selected>Europa / África</option>
+              <option value="oc">Oceanía / Asia</option>
+              <option value="am">América</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>&nbsp;</label>
+            <div class="thunder-status" id="thunderStatus" style="margin:0;">
+              <span class="dot"></span>
+              <span id="thunderStatusTxt">Sin conectar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fire-controls" style="margin-top:10px;">
+          <button class="fire-btn" id="btnThunderConectar" style="margin:0;">⚡ Conectar</button>
+          <button class="pdf-btn" id="btnThunderDetener" style="margin:0;" disabled>■ Detener</button>
+        </div>
+
+        <div class="thunder-counters">
+          <div class="thunder-counter"><div class="val" id="thunderCnt60">0</div><div class="lab">últimos 60 s</div></div>
+          <div class="thunder-counter"><div class="val" id="thunderCnt10">0</div><div class="lab">últimos 10 min</div></div>
+          <div class="thunder-counter"><div class="val" id="thunderCntTot">0</div><div class="lab">total sesión</div></div>
+        </div>
+        <div class="thunder-last">Último rayo: <b id="thunderLast">—</b></div>
+
+        <div id="thunderMap"></div>
+
+        <div class="thunder-legend">
+          <span><i class="fresh"></i>&lt; 1 min</span>
+          <span><i class="old"></i>1–5 min</span>
+          <span><i class="older"></i>5–15 min</span>
+          <span><i class="oldest"></i>&gt; 15 min</span>
+        </div>
+
+        <div class="fire-controls" style="margin-top:12px;">
+          <button class="pdf-btn" id="btnThunderSalamanca" style="margin:0;">📍 Salamanca</button>
+          <button class="pdf-btn" id="btnThunderKmz" style="margin:0;">📥 KMZ de la vista</button>
+        </div>
+        <button class="pdf-btn" id="btnThunderLimpiar" style="margin-top:8px;">🗑 Borrar rayos</button>
+
+        <div class="fc-note" style="margin-top:8px;">
+          Fuente: <a href="https://www.blitzortung.org" target="_blank" rel="noopener">Blitzortung.org</a>, red mundial de sensores de RF que triangulan cada descarga. Puede haber huecos de cobertura y algún falso positivo. Los rayos se retiran del mapa al cabo de una hora.
+        </div>
+        <div class="fc-note" style="margin-top:6px;">
+          <b>Segundo plano:</b> mientras estés conectado, la pantalla se mantiene encendida (Wake Lock) para que la descarga no se corte. Si cambias de app o bloqueas el móvil a mano, iOS/Android suspenden la web y el WebSocket se cierra; al volver a abrir la app se reconecta sola. Solo el botón «Detener» rompe esa intención. Para más estabilidad, añade la app a la pantalla de inicio (PWA).
+        </div>
+      </div>
+    </div>
+
+    <a class="pdf-btn" id="incylLink" href="https://servicios.jcyl.es/incyl/incyl" target="_blank" rel="noopener" style="display:block;text-align:center;text-decoration:none;margin-top:10px;">
+      🌲 INFORCYL
+    </a>
+
+    <div class="error-box" id="errorBox"></div>
+  </main>
+
+  <button class="back-top-btn" id="backTopBtn" title="Volver al inicio" aria-label="Volver al inicio">⬆</button>
+
+  <footer>
+    Meteorología · versión v22<br>
+    Datos: Open-Meteo (modelo horario con asimilación de observaciones), actualización cada 10 min.
+    AEMET OpenData no admite solicitudes directas desde el navegador (requiere backend), por lo que
+    no se usa como fuente directa en esta app.
+  </footer>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+let current = null;
+let lastFetchTime = null;
+let refreshTimer = null;
+let clockTimer = null;
+let searchAbort = null;
+let searchTimer = null;
+
+const el = id => document.getElementById(id);
+
+/* ---- Botón flotante "Volver al inicio" ----
+   Aparece cuando estás mirando las secciones del final:
+   incendios activos, rayos en tiempo real o INFORCYL. */
+function actualizarBotonInicio(){
+  const btn = document.getElementById('backTopBtn');
+  if(!btn) return;
+  const firePanel    = document.getElementById('firePanel');
+  const thunderPanel = document.getElementById('thunderPanel');
+  const incyl        = document.getElementById('incylLink');
+  const fireOpen    = firePanel    && firePanel.style.display    !== 'none';
+  const thunderOpen = thunderPanel && thunderPanel.style.display !== 'none';
+  // Enseña el botón si un panel está abierto o si el enlace INFORCYL entra en pantalla
+  let visible = fireOpen || thunderOpen;
+  if(!visible && incyl){
+    const r = incyl.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    if(r.top < vh && r.bottom > 0) visible = true;
+  }
+  btn.classList.toggle('show', visible);
+}
+window.addEventListener('scroll', actualizarBotonInicio, {passive:true});
+window.addEventListener('resize', actualizarBotonInicio);
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('backTopBtn');
+  if(btn){
+    btn.addEventListener('click', () => {
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+  actualizarBotonInicio();
+});
+
+function setCurrentLocation(loc){
+  current = loc;
+  el('stationName').textContent = loc.name;
+  const detail = el('locDetail');
+  if(loc.detail){
+    detail.style.display = 'block';
+    detail.textContent = loc.detail;
+  } else {
+    detail.style.display = 'none';
+    detail.textContent = '';
+  }
+  loadWeather();
+  if(fireOpen && fireMap) centerFireMap();
+  if(typeof window.__windRecentrar === 'function') window.__windRecentrar();
+}
+
+function useMyLocation(){
+  if(!navigator.geolocation){
+    showError('Este dispositivo no permite geolocalización.');
+    return;
+  }
+  const geoBtn = el('geoBtn');
+  geoBtn.classList.add('loading');
+  el('stationName').textContent = 'Localizando…';
+  navigator.geolocation.getCurrentPosition(pos => {
+    geoBtn.classList.remove('loading');
+    setCurrentLocation({
+      name: 'Mi ubicación',
+      lat: pos.coords.latitude,
+      lon: pos.coords.longitude,
+      detail: 'Obteniendo nombre del lugar…'
+    });
+    resolvePlaceName(pos.coords.latitude, pos.coords.longitude);
+  }, err => {
+    geoBtn.classList.remove('loading');
+    el('stationName').textContent = 'Buscar localidad';
+    let msg = 'No se pudo obtener tu ubicación.';
+    if(err && err.code === 1) msg = 'Permiso de ubicación denegado. Busca una localidad o vuelve a permitirlo.';
+    else if(err && err.code === 3) msg = 'La ubicación tardó demasiado. Prueba de nuevo o busca una localidad.';
+    showError(msg);
+  }, {timeout:8000, enableHighAccuracy:false, maximumAge:60000});
+}
+
+function resolvePlaceName(lat, lon){
+  fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=es`)
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      if(!current || current.name !== 'Mi ubicación') return;
+      const lugar = data.locality || data.city || data.principalSubdivision || null;
+      const detail = el('locDetail');
+      detail.style.display = 'block';
+      detail.textContent = lugar ? lugar : `${lat.toFixed(4)}, ${lon.toFixed(4)}`;
+    })
+    .catch(() => {
+      if(!current || current.name !== 'Mi ubicación') return;
+      const detail = el('locDetail');
+      detail.style.display = 'block';
+      detail.textContent = `${lat.toFixed(4)}, ${lon.toFixed(4)}`;
+    });
+}
+
+function formatSuggestionDetail(r){
+  const parts = [];
+  if(r.admin2 && r.admin2 !== r.name) parts.push(r.admin2);
+  if(r.admin1 && r.admin1 !== r.admin2) parts.push(r.admin1);
+  if(r.country) parts.push(r.country);
+  return parts.join(' · ');
+}
+
+async function searchLocations(query){
+  if(searchAbort) searchAbort.abort();
+  searchAbort = new AbortController();
+  const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=8&language=es&format=json`;
+  const res = await fetch(url, {signal: searchAbort.signal});
+  if(!res.ok) throw new Error('búsqueda no disponible');
+  const data = await res.json();
+  return data.results || [];
+}
+
+function renderSuggestions(results){
+  const box = el('searchSuggestions');
+  box.innerHTML = '';
+  if(!results.length){
+    const div = document.createElement('div');
+    div.className = 'suggestion empty';
+    div.textContent = 'Sin resultados';
+    box.appendChild(div);
+    box.classList.add('show');
+    return;
+  }
+  results.forEach(r => {
+    const div = document.createElement('div');
+    div.className = 'suggestion';
+    div.innerHTML = `<div class="sug-name">${r.name}</div><div class="sug-detail">${formatSuggestionDetail(r)}</div>`;
+    div.onclick = () => {
+      hideSuggestions();
+      el('searchInput').value = '';
+      el('searchClear').style.display = 'none';
+      setCurrentLocation({
+        name: r.name,
+        lat: r.latitude,
+        lon: r.longitude,
+        detail: formatSuggestionDetail(r)
+      });
+    };
+    box.appendChild(div);
+  });
+  box.classList.add('show');
+}
+
+function hideSuggestions(){
+  el('searchSuggestions').classList.remove('show');
+}
+
+function wireSearch(){
+  const input = el('searchInput');
+  const clear = el('searchClear');
+
+  input.addEventListener('input', () => {
+    const q = input.value.trim();
+    clear.style.display = q ? 'block' : 'none';
+    if(searchTimer) clearTimeout(searchTimer);
+    if(q.length < 2){ hideSuggestions(); return; }
+    searchTimer = setTimeout(async () => {
+      try{
+        const results = await searchLocations(q);
+        if(input.value.trim() === q) renderSuggestions(results);
+      }catch(e){
+        if(e.name !== 'AbortError') console.warn('Error búsqueda:', e);
+      }
+    }, 280);
+  });
+
+  input.addEventListener('focus', () => {
+    if(input.value.trim().length >= 2) el('searchSuggestions').classList.add('show');
+  });
+
+  clear.addEventListener('click', () => {
+    input.value = '';
+    clear.style.display = 'none';
+    hideSuggestions();
+    input.focus();
+  });
+
+  document.addEventListener('click', e => {
+    if(!e.target.closest('.search-wrap')) hideSuggestions();
+  });
+
+  el('geoBtn').addEventListener('click', useMyLocation);
+}
+
+function windCardinal(deg){
+  const dirs = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSO','SO','OSO','O','ONO','NO','NNO'];
+  return dirs[Math.round(deg / 22.5) % 16];
+}
+
+function showError(msg){
+  const box = el('errorBox');
+  box.textContent = msg;
+  box.classList.add('show');
+}
+function hideError(){
+  el('errorBox').classList.remove('show');
+}
+
+function setRisk(humidity, windSpeed){
+  const banner = el('riskBanner');
+  const humidityBox = el('humidityBox');
+  const windBox = el('windBox');
+  humidityBox.className = 'metric';
+  windBox.className = 'metric';
+  banner.className = 'risk-banner';
+
+  const lowHumidity = humidity <= 30;
+  const highWind = windSpeed >= 30;
+  const modHumidity = humidity <= 40;
+  const modWind = windSpeed >= 20;
+
+  if(lowHumidity) humidityBox.classList.add('alert');
+  else if(modHumidity) humidityBox.classList.add('warn');
+
+  if(highWind) windBox.classList.add('alert');
+  else if(modWind) windBox.classList.add('warn');
+
+  if((lowHumidity && highWind) || (lowHumidity && modWind) || (modHumidity && highWind)){
+    banner.classList.add('show','alto');
+    banner.textContent = '⚠ Condiciones de riesgo alto para incendio forestal (humedad baja / viento fuerte)';
+  } else if(modHumidity || modWind){
+    banner.classList.add('show','medio');
+    banner.textContent = '⚠ Condiciones de riesgo moderado: vigilar evolución de humedad y viento';
+  }
+}
+
+function updateClockLabel(){
+  if(!lastFetchTime) return;
+  const diffMin = Math.round((Date.now() - lastFetchTime) / 60000);
+  const label = el('updated');
+  if(diffMin <= 0){
+    label.textContent = 'Actualizado ahora';
+  } else {
+    label.textContent = `Actualizado hace ${diffMin} min`;
+  }
+  label.classList.toggle('stale', diffMin >= 20);
+}
+
+async function loadWeather(){
+  if(!current) return;
+  hideError();
+  el('stationName').textContent = current.name;
+  const refreshBtn = el('refreshBtn');
+  refreshBtn.disabled = true;
+  refreshBtn.textContent = 'Actualizando…';
+
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${current.lat}&longitude=${current.lon}` +
+    `&current=temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m,wind_direction_10m,wind_gusts_10m` +
+    `&wind_speed_unit=kmh&timezone=Europe%2FMadrid`;
+
+  try{
+    const res = await fetch(url);
+    if(!res.ok) throw new Error('Respuesta no válida del servicio meteorológico.');
+    const data = await res.json();
+    const c = data.current;
+
+    el('temp').textContent = Math.round(c.temperature_2m);
+    el('feels').textContent = `Sensación térmica ${Math.round(c.apparent_temperature)}°C`;
+    el('humidity').textContent = `${Math.round(c.relative_humidity_2m)}%`;
+    el('windSpeed').textContent = `${Math.round(c.wind_speed_10m)} km/h`;
+    el('windDir').textContent = `Viento del ${windCardinal(c.wind_direction_10m)} (${Math.round(c.wind_direction_10m)}°)`;
+    el('windGust').textContent = c.wind_gusts_10m != null ? `Rachas ${Math.round(c.wind_gusts_10m)} km/h` : '';
+    el('needle').setAttribute('transform', `rotate(${c.wind_direction_10m + 180} 12 12)`);
+
+    setRisk(c.relative_humidity_2m, c.wind_speed_10m);
+
+    lastFetchTime = Date.now();
+    updateClockLabel();
+
+    if(forecastOpen) loadForecast();
+    if(forecast3dOpen) loadForecast3d();
+    summaryRowsCache = null;
+    if(summaryOpen) loadSummary();
+  }catch(err){
+    console.error('Error cargando datos meteorológicos:', err);
+    showError('No se han podido cargar los datos' + (err && err.message ? ': ' + err.message : '') + '.');
+  }finally{
+    refreshBtn.disabled = false;
+    refreshBtn.textContent = 'Actualizar ahora';
+  }
+}
+
+function crearImagenGrafica(labels, datasets, opts){
+  const canvas = document.createElement('canvas');
+  canvas.width = 1000;
+  canvas.height = 420;
+  const ctx = canvas.getContext('2d');
+
+  // Fondo blanco (el canvas de Chart.js es transparente por defecto)
+  ctx.fillStyle = '#FFFFFF';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  const tipo = (opts && opts.type) || 'line';
+  const chart = new Chart(ctx, {
+    type: tipo,
+    data: {
+      labels,
+      datasets: datasets.map(d => tipo === 'bar' ? ({
+        label: d.label,
+        data: d.data,
+        backgroundColor: d.backgroundColor,
+        borderColor: d.borderColor,
+        borderWidth: 1.2,
+        borderRadius: 4,
+        categoryPercentage: 0.75,
+        barPercentage: 0.9
+      }) : ({
+        label: d.label,
+        data: d.data,
+        borderColor: d.borderColor,
+        backgroundColor: d.backgroundColor,
+        borderDash: d.borderDash || [],
+        borderWidth: 3,
+        pointRadius: 3,
+        pointBackgroundColor: d.borderColor,
+        tension: 0.25,
+        fill: false
+      }))
+    },
+    options: {
+      responsive: false,
+      animation: false,
+      layout: { padding: 10 },
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top',
+          labels: { font: { size: 15 }, color: '#1B211D', boxWidth: 22 }
+        }
+      },
+      scales: {
+        x: { ticks: { font: { size: 13 }, color: '#5B655E' }, grid: { color: '#E1E7DE' } },
+        y: { ticks: { font: { size: 13 }, color: '#5B655E' }, grid: { color: '#E1E7DE' } }
+      }
+    }
+  });
+
+  // Flechas de dirección del viento sobre los puntos del dataset indicado
+  if(opts && Array.isArray(opts.directions)){
+    try{
+      const idx = opts.arrowDatasetIndex != null ? opts.arrowDatasetIndex : 0;
+      const arrowSize = opts.arrowSize != null ? opts.arrowSize : 11;
+      const arrowColor = opts.arrowColor || '#B8722E';
+      const off = arrowSize + 16;
+      const meta = chart.getDatasetMeta(idx);
+      const area = chart.chartArea;
+      if(meta && meta.data){
+        meta.data.forEach((pt, i) => {
+          const deg = opts.directions[i];
+          if(deg == null || pt == null) return;
+          let ay = pt.y - off;
+          if(area && ay < area.top + arrowSize + 4) ay = pt.y + off;
+          dibujarFlechaViento(ctx, pt.x, ay, deg, arrowSize, arrowColor);
+        });
+      }
+    }catch(e){ console.warn('No se pudieron dibujar las flechas de dirección:', e); }
+  }
+
+  const url = canvas.toDataURL('image/png');
+  chart.destroy();
+  return url;
+}
+
+function dibujarFlechaViento(ctx, x, y, deg, size, color){
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.rotate((deg + 180) * Math.PI / 180);
+  // Flecha apuntando hacia el destino del viento (procedencia + 180°); gira en sentido horario
+  ctx.beginPath();
+  ctx.moveTo(0, -size);
+  ctx.lineTo(size * 0.62, size * 0.55);
+  ctx.lineTo(0, size * 0.18);
+  ctx.lineTo(-size * 0.62, size * 0.55);
+  ctx.closePath();
+  ctx.fillStyle = color;
+  ctx.fill();
+  ctx.lineWidth = Math.max(1.4, size * 0.16);
+  ctx.strokeStyle = '#FFFFFF';
+  ctx.stroke();
+  ctx.restore();
+}
+
+el('refreshBtn').addEventListener('click', loadWeather);
+
+let summaryRowsCache = null;
+
+async function fetchSummaryRows(){
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${current.lat}&longitude=${current.lon}` +
+    `&minutely_15=temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m,wind_direction_10m,wind_gusts_10m,precipitation` +
+    `&wind_speed_unit=kmh&timezone=Europe%2FMadrid&past_minutely_15=8&forecast_minutely_15=4`;
+  const res = await fetch(url);
+  if(!res.ok) throw new Error('Respuesta no válida del servicio meteorológico.');
+  const data = await res.json();
+  const m = data.minutely_15;
+  const now = Date.now();
+  const rows = m.time
+    .map((t, i) => ({
+      time: t,
+      temp: m.temperature_2m[i],
+      hum:  m.relative_humidity_2m[i],
+      feels:m.apparent_temperature[i],
+      wind: m.wind_speed_10m[i],
+      dir:  m.wind_direction_10m[i],
+      gust: m.wind_gusts_10m ? m.wind_gusts_10m[i] : null,
+      rain: m.precipitation ? m.precipitation[i] : null
+    }))
+    .filter(r => new Date(r.time).getTime() <= now)
+    .slice(-9);
+  if(!rows.length) throw new Error('Sin datos disponibles.');
+  summaryRowsCache = rows;
+  return rows;
+}
+
+async function generatePdfSummary(){
+  const btn = el('summaryPdfBtn');
+  btn.disabled = true;
+  const original = btn.textContent;
+  btn.textContent = 'Generando PDF…';
+  hideError();
+
+  try{
+    if(!window.jspdf || !window.jspdf.jsPDF){
+      throw new Error('No se ha podido cargar la librería de generación de PDF (jsPDF). Comprueba tu conexión a internet.');
+    }
+
+    const rows = summaryRowsCache || await fetchSummaryRows();
+    const rainTotal = rows.reduce((s,r)=> s + (r.rain||0), 0);
+    const huboLluvia = rainTotal > 0.05;
+
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+    const pageWidth = doc.internal.pageSize.getWidth();
+
+    doc.setFillColor(29, 82, 64);
+    doc.rect(0, 0, pageWidth, 26, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(15);
+    doc.setFont(undefined, 'bold');
+    doc.text('Resumen meteorológico · Últimas 2 horas (cada 15 min)', 14, 12);
+    doc.setFontSize(10);
+    doc.setFont(undefined, 'normal');
+    doc.text('Meteorología', 14, 19);
+
+    doc.setTextColor(27, 33, 29);
+    let y = 36;
+    doc.setFontSize(12);
+    doc.setFont(undefined, 'bold');
+    const locDetailText = el('locDetail').style.display !== 'none' ? el('locDetail').textContent : '';
+    const esCoordenadas = /^-?\d+\.\d+,\s*-?\d+\.\d+$/.test(locDetailText.trim());
+    const lugarTitulo = current.name + (locDetailText && locDetailText !== 'Localizando…' && !esCoordenadas ? ` (${locDetailText})` : '');
+    doc.text(`Ubicación: ${lugarTitulo}`, 14, y);
+    y += 6;
+    doc.setFontSize(9.5);
+    doc.setFont(undefined, 'normal');
+    doc.text(`Generado: ${new Date().toLocaleString('es-ES')}`, 14, y);
+    y += 8;
+
+    const tableRows = rows.map(r => {
+      const fecha = new Date(r.time);
+      const hora = fecha.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+      const base = [
+        hora,
+        r.temp != null ? `${Math.round(r.temp)}°` : '—',
+        r.feels != null ? `${Math.round(r.feels)}°` : '—',
+        r.hum != null ? `${Math.round(r.hum)}%` : '—',
+        r.wind != null ? `${Math.round(r.wind)}` : '—',
+        r.dir != null ? `${windCardinal(r.dir)}` : '—',
+        r.gust != null ? `${Math.round(r.gust)}` : '—'
+      ];
+      if(huboLluvia) base.push(r.rain != null ? `${r.rain.toFixed(1)}` : '—');
+      return base;
+    });
+
+    const head = ['Hora', 'Temp.', 'Sens.', 'Hum.', 'Viento', 'Dir.', 'Rachas'];
+    if(huboLluvia) head.push('Lluvia mm');
+
+    doc.autoTable({
+      startY: y,
+      head: [head],
+      body: tableRows,
+      theme: 'grid',
+      headStyles: { fillColor: [29, 82, 64], textColor: 255, fontSize: 9 },
+      styles: { fontSize: 9, cellPadding: 2.2 },
+      margin: { left: 14, right: 14 }
+    });
+
+    let finalY = doc.lastAutoTable.finalY + 10;
+
+    const last = rows[rows.length - 1];
+    const lowHumidity = last.hum <= 30;
+    const highWind = last.wind >= 30;
+    const modHumidity = last.hum <= 40;
+    const modWind = last.wind >= 20;
+    let riesgoTexto = 'Riesgo bajo según humedad y viento actuales.';
+    if((lowHumidity && highWind) || (lowHumidity && modWind) || (modHumidity && highWind)){
+      riesgoTexto = 'Riesgo alto: humedad baja y/o viento fuerte.';
+    } else if(modHumidity || modWind){
+      riesgoTexto = 'Riesgo moderado: vigilar evolución de humedad y viento.';
+    }
+
+    doc.setFontSize(10.5);
+    doc.setFont(undefined, 'bold');
+    doc.text('Valoración orientativa de riesgo', 14, finalY);
+    finalY += 6;
+    doc.setFontSize(9.5);
+    doc.setFont(undefined, 'normal');
+    const riesgoLines = doc.splitTextToSize(riesgoTexto, pageWidth - 28);
+    doc.text(riesgoLines, 14, finalY);
+    finalY += riesgoLines.length * 5 + 6;
+
+    doc.setFontSize(8);
+    doc.setTextColor(91, 101, 94);
+    const footerLines = doc.splitTextToSize(
+      'Fuente: Open-Meteo (modelo horario con asimilación de observaciones). Datos orientativos, no sustituyen fuentes oficiales (AEMET) para decisiones operativas.',
+      pageWidth - 28
+    );
+    doc.text(footerLines, 14, finalY);
+
+    // --- Gráficas de evolución (temperatura, humedad, viento) ---
+    let huboGraficas = false;
+    try{
+      if(typeof Chart === 'undefined'){
+        throw new Error('Chart.js no está disponible');
+      }
+      const labels = rows.map(r => new Date(r.time).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' }));
+
+      const imgTemp = crearImagenGrafica(
+        labels,
+        [
+          { label: 'Temperatura (°C)', data: rows.map(r => r.temp), borderColor: '#1D5240', backgroundColor: '#1D5240' },
+          { label: 'Sensación térmica (°C)', data: rows.map(r => r.feels), borderColor: '#B8722E', backgroundColor: '#B8722E', borderDash: [6, 4] }
+        ]
+      );
+      const imgHum = crearImagenGrafica(
+        labels,
+        [
+          { label: 'Humedad relativa (%)', data: rows.map(r => r.hum), borderColor: '#2E5E3F', backgroundColor: '#2E5E3F' }
+        ]
+      );
+      const imgWind = crearImagenGrafica(
+        labels,
+        [
+          { label: 'Viento (km/h)', data: rows.map(r => r.wind), borderColor: '#1D5240', backgroundColor: '#1D5240' },
+          { label: 'Rachas (km/h)', data: rows.map(r => r.gust), borderColor: '#B23B2E', backgroundColor: '#B23B2E', borderDash: [6, 4] }
+        ]
+      );
+
+      doc.addPage();
+      doc.setTextColor(27, 33, 29);
+      doc.setFontSize(12);
+      doc.setFont(undefined, 'bold');
+      doc.text('Evolución en las últimas 2 horas', 14, 16);
+
+      const imgW = pageWidth - 28;
+      const imgH = imgW * 0.42;
+      let chartY = 22;
+      doc.addImage(imgTemp, 'PNG', 14, chartY, imgW, imgH);
+      chartY += imgH + 8;
+      doc.addImage(imgHum, 'PNG', 14, chartY, imgW, imgH);
+      chartY += imgH + 8;
+      doc.addImage(imgWind, 'PNG', 14, chartY, imgW, imgH);
+
+      if(huboLluvia){
+        const imgRain = crearImagenGrafica(labels, [
+          { label: 'Precipitación (mm/15 min)', data: rows.map(r => r.rain || 0),
+            borderColor: '#1565C0', backgroundColor: 'rgba(21,101,192,.75)' }
+        ], { type: 'bar' });
+        chartY += imgH + 8;
+        if(chartY + imgH > 285){ doc.addPage(); chartY = 22; }
+        doc.addImage(imgRain, 'PNG', 14, chartY, imgW, imgH);
+        doc.setFontSize(8);
+        doc.setTextColor(91, 101, 94);
+        doc.text(`Precipitación total acumulada en el intervalo: ${rainTotal.toFixed(1)} mm.`,
+                 14, chartY + imgH + 5);
+      }
+
+      huboGraficas = true;
+    }catch(chartErr){
+      console.warn('No se pudieron generar las gráficas del PDF:', chartErr);
+    }
+
+    const nombreArchivo = `Resumen_Meteo_${current.name.replace(/\s+/g, '_')}_${new Date().toISOString().slice(0,16).replace(/[:T]/g,'-')}.pdf`;
+    doc.save(nombreArchivo);
+
+  }catch(err){
+    console.error('Error generando el resumen PDF:', err);
+    showError('No se ha podido generar el PDF' + (err && err.message ? ': ' + err.message : '') + '.');
+  }finally{
+    btn.disabled = false;
+    btn.textContent = original;
+  }
+}
+
+/* ============================================================
+   RESUMEN ÚLTIMAS 2 HORAS · Panel plegable con gráficas y PDF
+   Comparte fetchSummaryRows() con la generación del PDF.
+   ============================================================ */
+let summaryOpen = false;
+const summaryCharts = { temp:null, hum:null, wind:null, rain:null };
+
+function destroySummaryCharts(){
+  Object.keys(summaryCharts).forEach(k => {
+    if(summaryCharts[k]){ summaryCharts[k].destroy(); summaryCharts[k] = null; }
+  });
+}
+
+function renderDirStripInto(elId, rows){
+  const strip = el(elId);
+  strip.innerHTML = '';
+  rows.forEach(r => {
+    const cell = document.createElement('div');
+    cell.className = 'dir-cell';
+    const hora = new Date(r.time).toLocaleTimeString('es-ES', {hour:'2-digit', minute:'2-digit'});
+    const card = r.dir != null ? windCardinal(r.dir) : '—';
+    const deg  = r.dir != null ? Math.round(r.dir) + '°' : '';
+    const rot  = r.dir != null ? r.dir + 180 : 0;
+    cell.innerHTML =
+      `<div class="dir-hour">${hora}</div>` +
+      `<svg class="dir-arrow" viewBox="0 0 24 24" style="transform:rotate(${rot}deg)">` +
+        `<path d="M12 3 L16 13 L12 10.6 L8 13 Z" fill="#1D5240"/>` +
+        `<line x1="12" y1="10.6" x2="12" y2="20.5" stroke="#1D5240" stroke-width="1.7" stroke-linecap="round"/>` +
+      `</svg>` +
+      `<div class="dir-card">${card}</div>` +
+      `<div class="dir-deg">${deg}</div>`;
+    strip.appendChild(cell);
+  });
+}
+
+async function loadSummary(){
+  const loading = el('sumLoading');
+  const body = el('sumBody');
+  loading.style.display = 'block';
+  loading.textContent = 'Cargando resumen…';
+  body.style.display = 'none';
+
+  try{
+    if(typeof Chart === 'undefined') throw new Error('Chart.js no se ha cargado. Revisa tu conexión.');
+
+    const rows = await fetchSummaryRows();
+    const labels = rows.map(r => new Date(r.time).toLocaleTimeString('es-ES', {hour:'2-digit', minute:'2-digit'}));
+    const primera = labels[0], ultima = labels[labels.length - 1];
+    el('sumSub').textContent = `${primera} → ${ultima}`;
+    el('sumTitle').textContent = 'Últimas 2 horas · ' + (current ? current.name : '—');
+
+    destroySummaryCharts();
+    loading.style.display = 'none';
+    body.style.display = 'block';
+
+    summaryCharts.temp = crearGraficaLive('sumChartTemp', {
+      type:'line',
+      data:{ labels, datasets:[
+        { label:'Temperatura (°C)', data:rows.map(r=>r.temp),
+          borderColor:'#1D5240', backgroundColor:'rgba(29,82,64,.08)',
+          borderWidth:2.4, tension:.3, pointRadius:2.5, pointBackgroundColor:'#1D5240', fill:true },
+        { label:'Sensación (°C)', data:rows.map(r=>r.feels),
+          borderColor:'#B8722E', backgroundColor:'transparent',
+          borderWidth:2, borderDash:[5,4], tension:.3, pointRadius:2, pointBackgroundColor:'#B8722E', fill:false }
+      ]},
+      options: commonOptions('°C'),
+      plugins:[ makeValueLabels(0, v => Math.round(v)+'°', '#1D5240') ]
+    });
+
+    summaryCharts.hum = crearGraficaLive('sumChartHum', {
+      type:'line',
+      data:{ labels, datasets:[
+        { label:'Humedad relativa (%)', data:rows.map(r=>r.hum),
+          borderColor:'#2E5E3F', backgroundColor:'rgba(46,94,63,.12)',
+          borderWidth:2.4, tension:.3, pointRadius:2.5, pointBackgroundColor:'#2E5E3F', fill:true }
+      ]},
+      options: commonOptions('%', [
+        { value:30, color:'#B23B2E', label:'30% · riesgo alto' },
+        { value:40, color:'#B8722E', label:'40% · vigilancia' }
+      ], { suggestedMin:0, suggestedMax:100 }),
+      plugins:[ thresholdPlugin, makeValueLabels(0, v=>Math.round(v)+'%', '#2E5E3F') ]
+    });
+
+    summaryCharts.wind = crearGraficaLive('sumChartWind', {
+      type:'line',
+      data:{ labels, datasets:[
+        { label:'Viento (km/h)', data:rows.map(r=>r.wind),
+          borderColor:'#1D5240', backgroundColor:'rgba(29,82,64,.08)',
+          borderWidth:2.4, tension:.3, pointRadius:2.5, pointBackgroundColor:'#1D5240', fill:true },
+        { label:'Rachas (km/h)', data:rows.map(r=>r.gust),
+          borderColor:'#B23B2E', backgroundColor:'transparent',
+          borderWidth:2, borderDash:[5,4], tension:.3, pointRadius:2, pointBackgroundColor:'#B23B2E', fill:false }
+      ]},
+      options: commonOptions('km/h', [
+        { value:30, color:'#B23B2E', label:'30 km/h · riesgo alto' },
+        { value:20, color:'#B8722E', label:'20 km/h · vigilancia' }
+      ], { suggestedMin:0 }),
+      plugins:[ thresholdPlugin, makeValueLabels(0, v=>Math.round(v), '#1D5240') ]
+    });
+
+    // Lluvia: siempre mostrar el total en mm (aunque sea 0); la gráfica solo si hubo lluvia
+    const rainTotal = rows.reduce((s, r) => s + (r.rain || 0), 0);
+    const chartWrap = el('sumRainChartWrap');
+    const totalEl = el('sumRainTotal');
+    const noteEl = el('sumRainNote');
+    if(rainTotal > 0.05){
+      totalEl.textContent = `${rainTotal.toFixed(1)} mm`;
+      totalEl.classList.add('has-rain');
+      noteEl.textContent = 'Acumulado en el intervalo (barras: mm por cada 15 min).';
+      chartWrap.style.display = 'block';
+      summaryCharts.rain = crearGraficaLive('sumChartRain', {
+        type:'bar',
+        data:{ labels, datasets:[
+          { label:'mm por 15 min', data:rows.map(r => r.rain || 0),
+            backgroundColor:'rgba(21,101,192,.75)', borderColor:'#1565C0',
+            borderWidth:1, borderRadius:4, categoryPercentage:0.75, barPercentage:0.9 }
+        ]},
+        options: commonOptions('mm', null, { suggestedMin:0 }),
+        plugins:[]
+      });
+    } else {
+      totalEl.textContent = '0.0 mm';
+      totalEl.classList.remove('has-rain');
+      noteEl.textContent = 'Sin precipitación registrada en las últimas 2 h.';
+      chartWrap.style.display = 'none';
+    }
+
+    renderDirStripInto('sumDirStrip', rows);
+
+  }catch(err){
+    console.error('Error cargando el resumen 2h:', err);
+    destroySummaryCharts();
+    body.style.display = 'none';
+    loading.style.display = 'block';
+    loading.textContent = 'No se pudo cargar el resumen' + (err && err.message ? ': ' + err.message : '') + '.';
+  }
+}
+
+el('summaryBtn').addEventListener('click', () => {
+  summaryOpen = !summaryOpen;
+  const panel = el('summaryPanel');
+  const btn = el('summaryBtn');
+  if(summaryOpen){
+    panel.style.display = 'block';
+    btn.classList.add('open');
+    btn.textContent = '📊 Ocultar resumen 2 h';
+    loadSummary();
+  } else {
+    panel.style.display = 'none';
+    btn.classList.remove('open');
+    btn.textContent = '📊 Resumen últimas 2 h';
+    destroySummaryCharts();
+  }
+});
+
+el('summaryPdfBtn').addEventListener('click', generatePdfSummary);
+
+/* ============================================================
+   PREVISIÓN HORARIA · PRÓXIMAS 12 HORAS
+   Temperatura, humedad, velocidad y dirección del viento
+   con gráficas en vivo (Chart.js) y umbrales de riesgo.
+   ============================================================ */
+let forecastOpen = false;
+const forecastCharts = { temp:null, hum:null, wind:null, rain:null };
+
+function stormProbability(code, cape){
+  // Heurística: código WMO 95/96/99 = tormenta explícita; chubascos + CAPE alto = riesgo notable
+  if(code == null) code = 0;
+  if(cape == null) cape = 0;
+  if(code === 95) return 85;
+  if(code === 96 || code === 99) return 95;
+  if(code >= 80 && code <= 82){
+    if(cape > 1500) return 60;
+    if(cape > 800) return 45;
+    return 30;
+  }
+  if(code === 65) return 20;
+  if(cape > 2000) return 40;
+  if(cape > 1000) return 20;
+  if(cape > 500)  return 10;
+  return 0;
+}
+
+el('forecastBtn').addEventListener('click', () => {
+  forecastOpen = !forecastOpen;
+  const panel = el('forecastPanel');
+  const btn = el('forecastBtn');
+  if(forecastOpen){
+    panel.style.display = 'block';
+    btn.classList.add('open');
+    btn.textContent = '🕐 Ocultar previsión 12 h';
+    loadForecast();
+  } else {
+    panel.style.display = 'none';
+    btn.classList.remove('open');
+    btn.textContent = '🕐 Previsión próximas 12 h';
+    destroyForecastCharts();
+  }
+});
+
+function destroyForecastCharts(){
+  Object.keys(forecastCharts).forEach(k => {
+    if(forecastCharts[k]){ forecastCharts[k].destroy(); forecastCharts[k] = null; }
+  });
+}
+
+// Plugin: líneas horizontales de umbral (riesgo de incendio)
+const thresholdPlugin = {
+  id: 'thresholds',
+  afterDatasetsDraw(chart){
+    const opts = chart.options.plugins.thresholds;
+    const lines = (opts && opts.lines) || [];
+    if(!lines.length) return;
+    const { ctx, chartArea:{ left, right, top, bottom }, scales:{ y } } = chart;
+    ctx.save();
+    lines.forEach(l => {
+      const yPos = y.getPixelForValue(l.value);
+      if(yPos < top || yPos > bottom) return;
+      ctx.beginPath();
+      ctx.setLineDash([5,4]);
+      ctx.lineWidth = 1.4;
+      ctx.strokeStyle = l.color;
+      ctx.moveTo(left, yPos);
+      ctx.lineTo(right, yPos);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.font = '600 10px -apple-system, sans-serif';
+      ctx.fillStyle = l.color;
+      ctx.textAlign = 'right';
+      ctx.fillText(l.label, right - 4, yPos - 4);
+    });
+    ctx.restore();
+  }
+};
+
+// Plugin factory: etiquetas de valor sobre los puntos de un dataset
+function makeValueLabels(datasetIndex, formatter, color){
+  return {
+    id: 'valuelabels_' + datasetIndex,
+    afterDatasetsDraw(chart){
+      const meta = chart.getDatasetMeta(datasetIndex);
+      if(!meta || meta.hidden) return;
+      const ctx = chart.ctx;
+      ctx.save();
+      ctx.font = '700 9.5px -apple-system, sans-serif';
+      ctx.fillStyle = color;
+      ctx.textAlign = 'center';
+      meta.data.forEach((pt, i) => {
+        const v = chart.data.datasets[datasetIndex].data[i];
+        if(v == null) return;
+        ctx.fillText(formatter(v), pt.x, pt.y - 8);
+      });
+      ctx.restore();
+    }
+  };
+}
+
+function commonOptions(unit, thresholds, yOpts){
+  return {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: false,
+    interaction: { mode: 'index', intersect: false },
+    layout: { padding: { top: 18, right: 8, left: 2, bottom: 2 } },
+    plugins: {
+      legend: {
+        display: true,
+        position: 'top',
+        labels: { font: { size: 11 }, color: '#1B211D', boxWidth: 16, padding: 8, usePointStyle: true }
+      },
+      tooltip: {
+        callbacks: {
+          label: (c) => `${c.dataset.label}: ${c.parsed.y != null ? Math.round(c.parsed.y * 10) / 10 : '—'} ${unit}`
+        }
+      },
+      thresholds: thresholds ? { lines: thresholds } : undefined
+    },
+    scales: {
+      x: { ticks: { font: { size: 10 }, color: '#5B655E', autoSkip: false, maxRotation: 0 }, grid: { color: '#E1E7DE' } },
+      y: Object.assign(
+        { ticks: { font: { size: 10 }, color: '#5B655E' }, grid: { color: '#E1E7DE' } },
+        yOpts || {}
+      )
+    }
+  };
+}
+
+function crearGraficaLive(canvasId, config){
+  return new Chart(el(canvasId).getContext('2d'), config);
+}
+
+function renderDirStrip(rows){
+  const strip = el('dirStrip');
+  strip.innerHTML = '';
+  rows.forEach(r => {
+    const cell = document.createElement('div');
+    cell.className = 'dir-cell';
+    const hora = new Date(r.time).getHours() + 'h';
+    const card = r.dir != null ? windCardinal(r.dir) : '—';
+    const deg = r.dir != null ? Math.round(r.dir) + '°' : '';
+    const rot = r.dir != null ? r.dir + 180 : 0;
+    cell.innerHTML =
+      `<div class="dir-hour">${hora}</div>` +
+      `<svg class="dir-arrow" viewBox="0 0 24 24" style="transform:rotate(${rot}deg)">` +
+        `<path d="M12 3 L16 13 L12 10.6 L8 13 Z" fill="#1D5240"/>` +
+        `<line x1="12" y1="10.6" x2="12" y2="20.5" stroke="#1D5240" stroke-width="1.7" stroke-linecap="round"/>` +
+      `</svg>` +
+      `<div class="dir-card">${card}</div>` +
+      `<div class="dir-deg">${deg}</div>`;
+    strip.appendChild(cell);
+  });
+}
+
+async function fetchForecastRows(){
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${current.lat}&longitude=${current.lon}` +
+    `&hourly=temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m,wind_direction_10m,wind_gusts_10m,precipitation_probability,weather_code,cape` +
+    `&wind_speed_unit=kmh&timezone=Europe%2FMadrid&forecast_days=2`;
+  const res = await fetch(url);
+  if(!res.ok) throw new Error('Respuesta no válida del servicio meteorológico.');
+  const data = await res.json();
+  const h = data.hourly;
+  const now = Date.now();
+  const rows = h.time.map((t, i) => {
+    const code = h.weather_code ? h.weather_code[i] : null;
+    const cape = h.cape ? h.cape[i] : null;
+    return {
+      time: t,
+      temp: h.temperature_2m[i],
+      feels: h.apparent_temperature[i],
+      hum:  h.relative_humidity_2m[i],
+      wind: h.wind_speed_10m[i],
+      dir:  h.wind_direction_10m[i],
+      gust: h.wind_gusts_10m ? h.wind_gusts_10m[i] : null,
+      rain: h.precipitation_probability ? h.precipitation_probability[i] : null,
+      code,
+      cape,
+      storm: stormProbability(code, cape)
+    };
+  })
+  .filter(r => new Date(r.time).getTime() >= now - 60 * 60 * 1000)
+  .slice(0, 12);
+  if(!rows.length) throw new Error('Sin datos de previsión disponibles.');
+  return rows;
+}
+
+function clasificarRiesgoHoras(rows){
+  const horasAlto = rows.filter(r =>
+    (r.hum != null && r.hum <= 30 && r.wind != null && r.wind >= 20) ||
+    (r.hum != null && r.hum <= 40 && r.wind != null && r.wind >= 30)
+  );
+  const horasMod = rows.filter(r =>
+    (r.hum != null && r.hum <= 40) || (r.wind != null && r.wind >= 20)
+  );
+  let nivel = 'bajo';
+  if(horasAlto.length) nivel = 'alto';
+  else if(horasMod.length) nivel = 'medio';
+  const horasAltoTxt = horasAlto.map(r => new Date(r.time).getHours() + 'h').join(', ');
+  let texto = 'Riesgo bajo según la previsión de humedad y viento.';
+  if(nivel === 'alto') texto = 'Riesgo alto de incendio en las horas: ' + horasAltoTxt + ' (humedad baja y/o viento fuerte).';
+  else if(nivel === 'medio') texto = 'Riesgo moderado en algunas horas: vigilar evolución de humedad y viento.';
+  return { horasAlto, horasMod, nivel, horasAltoTxt, texto };
+}
+
+async function loadForecast(){
+  const loading = el('fcLoading');
+  const body = el('fcBody');
+  loading.style.display = 'block';
+  loading.textContent = 'Cargando previsión…';
+  body.style.display = 'none';
+
+  try{
+    if(typeof Chart === 'undefined'){
+      throw new Error('No se ha podido cargar la librería de gráficas (Chart.js). Comprueba tu conexión.');
+    }
+
+    const rows = await fetchForecastRows();
+
+    const labels = rows.map(r => new Date(r.time).getHours() + 'h');
+    const primera = new Date(rows[0].time).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+    const ultima  = new Date(rows[rows.length - 1].time).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+    el('fcSub').textContent = `${primera} → ${ultima}`;
+    el('fcTitle').textContent = 'Previsión horaria · ' + (current ? current.name : '—');
+
+    // Valoración de riesgo hora a hora (misma lógica que el tiempo actual)
+    const fcRisk = el('fcRisk');
+    const riesgo = clasificarRiesgoHoras(rows);
+    if(riesgo.nivel === 'alto'){
+      fcRisk.className = 'risk-banner show alto';
+      fcRisk.textContent = '⚠ Riesgo alto de incendio previsto (humedad baja + viento) en: ' + riesgo.horasAltoTxt;
+    } else if(riesgo.nivel === 'medio'){
+      fcRisk.className = 'risk-banner show medio';
+      fcRisk.textContent = '⚠ Riesgo moderado en algunas horas: vigilar evolución de humedad y viento.';
+    } else {
+      fcRisk.className = 'risk-banner';
+      fcRisk.textContent = '';
+    }
+
+    destroyForecastCharts();
+    loading.style.display = 'none';
+    body.style.display = 'block';
+
+    // --- Temperatura y sensación térmica ---
+    forecastCharts.temp = crearGraficaLive('chartTemp', {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [
+          { label: 'Temperatura (°C)', data: rows.map(r => r.temp),
+            borderColor: '#1D5240', backgroundColor: 'rgba(29,82,64,.08)',
+            borderWidth: 2.4, tension: .3, pointRadius: 2.5, pointBackgroundColor: '#1D5240', fill: true },
+          { label: 'Sensación (°C)', data: rows.map(r => r.feels),
+            borderColor: '#B8722E', backgroundColor: 'transparent',
+            borderWidth: 2, borderDash: [5,4], tension: .3, pointRadius: 2, pointBackgroundColor: '#B8722E', fill: false }
+        ]
+      },
+      options: commonOptions('°C'),
+      plugins: [ makeValueLabels(0, v => Math.round(v) + '°', '#1D5240') ]
+    });
+
+    // --- Humedad relativa (con umbrales de riesgo) ---
+    forecastCharts.hum = crearGraficaLive('chartHum', {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [
+          { label: 'Humedad relativa (%)', data: rows.map(r => r.hum),
+            borderColor: '#2E5E3F', backgroundColor: 'rgba(46,94,63,.12)',
+            borderWidth: 2.4, tension: .3, pointRadius: 2.5, pointBackgroundColor: '#2E5E3F', fill: true }
+        ]
+      },
+      options: commonOptions('%', [
+        { value: 30, color: '#B23B2E', label: '30% · riesgo alto' },
+        { value: 40, color: '#B8722E', label: '40% · vigilancia' }
+      ], { suggestedMin: 0, suggestedMax: 100 }),
+      plugins: [ thresholdPlugin, makeValueLabels(0, v => Math.round(v) + '%', '#2E5E3F') ]
+    });
+
+    // --- Viento y rachas (con umbrales de riesgo) ---
+    forecastCharts.wind = crearGraficaLive('chartWind', {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [
+          { label: 'Viento (km/h)', data: rows.map(r => r.wind),
+            borderColor: '#1D5240', backgroundColor: 'rgba(29,82,64,.08)',
+            borderWidth: 2.4, tension: .3, pointRadius: 2.5, pointBackgroundColor: '#1D5240', fill: true },
+          { label: 'Rachas (km/h)', data: rows.map(r => r.gust),
+            borderColor: '#B23B2E', backgroundColor: 'transparent',
+            borderWidth: 2, borderDash: [5,4], tension: .3, pointRadius: 2, pointBackgroundColor: '#B23B2E', fill: false }
+        ]
+      },
+      options: commonOptions('km/h', [
+        { value: 30, color: '#B23B2E', label: '30 km/h · riesgo alto' },
+        { value: 20, color: '#B8722E', label: '20 km/h · vigilancia' }
+      ], { suggestedMin: 0 }),
+      plugins: [ thresholdPlugin, makeValueLabels(0, v => Math.round(v), '#1D5240') ]
+    });
+
+    // --- Probabilidad de lluvia y tormenta (barras) ---
+    forecastCharts.rain = crearGraficaLive('chartRain', {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [
+          { label: 'Lluvia (%)', data: rows.map(r => r.rain),
+            backgroundColor: 'rgba(21,101,192,.75)', borderColor:'#1565C0',
+            borderWidth: 1, borderRadius: 4, categoryPercentage: 0.75, barPercentage: 0.9 },
+          { label: 'Tormenta (%)', data: rows.map(r => r.storm),
+            backgroundColor: 'rgba(178,59,46,.75)', borderColor:'#B23B2E',
+            borderWidth: 1, borderRadius: 4, categoryPercentage: 0.75, barPercentage: 0.9 }
+        ]
+      },
+      options: commonOptions('%', [
+        { value: 50, color: '#B8722E', label: '50% · probable' }
+      ], { suggestedMin: 0, suggestedMax: 100 }),
+      plugins: [ thresholdPlugin ]
+    });
+
+    // --- Dirección del viento ---
+    renderDirStrip(rows);
+
+  }catch(err){
+    console.error('Error cargando la previsión:', err);
+    destroyForecastCharts();
+    body.style.display = 'none';
+    loading.style.display = 'block';
+    loading.textContent = 'No se pudo cargar la previsión' + (err && err.message ? ': ' + err.message : '') + '.';
+  }
+}
+
+/* ============================================================
+   PREVISIÓN A 3 DÍAS · resumen diario + gráficas horarias 72 h
+   ============================================================ */
+let forecast3dOpen = false;
+const forecast3dCharts = { temp:null, hum:null, wind:null, rain:null };
+
+function destroyForecast3dCharts(){
+  Object.keys(forecast3dCharts).forEach(k => {
+    if(forecast3dCharts[k]){ forecast3dCharts[k].destroy(); forecast3dCharts[k] = null; }
+  });
+}
+
+function iconoWmo(code){
+  if(code == null) return '·';
+  if(code === 0) return '☀️';
+  if(code === 1 || code === 2) return '🌤';
+  if(code === 3) return '☁️';
+  if(code === 45 || code === 48) return '🌫';
+  if(code >= 51 && code <= 57) return '🌦';
+  if(code >= 61 && code <= 65) return '🌧';
+  if(code >= 66 && code <= 67) return '🌧';
+  if(code >= 71 && code <= 77) return '🌨';
+  if(code >= 80 && code <= 82) return '🌦';
+  if(code >= 85 && code <= 86) return '🌨';
+  if(code === 95) return '⛈';
+  if(code === 96 || code === 99) return '⛈';
+  return '·';
+}
+
+function nombreDiaCorto(dateStr){
+  const d = new Date(dateStr + 'T12:00:00');
+  const dow = d.toLocaleDateString('es-ES', { weekday: 'short' }).replace('.', '');
+  return dow.charAt(0).toUpperCase() + dow.slice(1);
+}
+
+function fechaCortaDMon(dateStr){
+  const d = new Date(dateStr + 'T12:00:00');
+  return d.getDate() + ' ' + d.toLocaleDateString('es-ES', { month: 'short' }).replace('.', '');
+}
+
+el('forecast3dBtn').addEventListener('click', () => {
+  forecast3dOpen = !forecast3dOpen;
+  const panel = el('forecast3dPanel');
+  const btn = el('forecast3dBtn');
+  if(forecast3dOpen){
+    panel.style.display = 'block';
+    btn.classList.add('open');
+    btn.textContent = '🗓 Ocultar previsión 3 días';
+    loadForecast3d();
+    setTimeout(() => panel.scrollIntoView({behavior:'smooth', block:'start'}), 80);
+  } else {
+    panel.style.display = 'none';
+    btn.classList.remove('open');
+    btn.textContent = '🗓 Previsión próximos 3 días';
+    destroyForecast3dCharts();
+  }
+});
+
+async function fetchForecast3d(){
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${current.lat}&longitude=${current.lon}` +
+    `&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m,wind_gusts_10m,precipitation_probability,precipitation,weather_code` +
+    `&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,weather_code` +
+    `&wind_speed_unit=kmh&timezone=Europe%2FMadrid&forecast_days=3`;
+  const res = await fetch(url);
+  if(!res.ok) throw new Error('Respuesta no válida del servicio meteorológico.');
+  const data = await res.json();
+  const h = data.hourly, d = data.daily;
+  const hourly = h.time.map((t, i) => ({
+    time: t,
+    temp: h.temperature_2m[i],
+    hum:  h.relative_humidity_2m[i],
+    wind: h.wind_speed_10m[i],
+    gust: h.wind_gusts_10m ? h.wind_gusts_10m[i] : null,
+    rainP: h.precipitation_probability ? h.precipitation_probability[i] : null,
+    rainM: h.precipitation ? h.precipitation[i] : 0,
+    code: h.weather_code ? h.weather_code[i] : null
+  }));
+  const days = d.time.map((t, i) => ({
+    date: t,
+    tmax: d.temperature_2m_max[i],
+    tmin: d.temperature_2m_min[i],
+    rainSum: d.precipitation_sum[i],
+    rainProb: d.precipitation_probability_max ? d.precipitation_probability_max[i] : null,
+    windMax: d.wind_speed_10m_max[i],
+    gustMax: d.wind_gusts_10m_max ? d.wind_gusts_10m_max[i] : null,
+    code: d.weather_code[i]
+  })).slice(0, 3);
+  return { hourly, days };
+}
+
+function renderD3DayCards(days){
+  const wrap = el('d3DayCards');
+  wrap.innerHTML = '';
+  days.forEach(d => {
+    const div = document.createElement('div');
+    div.className = 'd3-day';
+    const gustTxt = d.gustMax != null ? ` · ${Math.round(d.gustMax)}` : '';
+    const rainTxt = (d.rainProb != null ? Math.round(d.rainProb) + '% · ' : '') +
+                    (Math.round(d.rainSum * 10) / 10) + ' mm';
+    div.innerHTML =
+      `<div class="d3-dow">${nombreDiaCorto(d.date)}</div>` +
+      `<div class="d3-date">${fechaCortaDMon(d.date)}</div>` +
+      `<div class="d3-icon">${iconoWmo(d.code)}</div>` +
+      `<div class="d3-tmax">${Math.round(d.tmax)}°</div>` +
+      `<div class="d3-tmin">${Math.round(d.tmin)}°</div>` +
+      `<div class="d3-rain">${rainTxt}</div>` +
+      `<div class="d3-wind">🌬 ${Math.round(d.windMax)}${gustTxt} km/h</div>`;
+    wrap.appendChild(div);
+  });
+}
+
+// Plugin: bandas verticales de fondo y separadores de día en gráficas 72 h
+function makeDayBandsPlugin(hourly){
+  return {
+    id: 'daybands',
+    beforeDatasetsDraw(chart){
+      const { ctx, chartArea:{ left, right, top, bottom }, scales:{ x } } = chart;
+      ctx.save();
+      let currentDay = null;
+      let bandStart = left;
+      let dayIdx = 0;
+      const bandColors = ['rgba(29,82,64,.035)', 'rgba(184,114,46,.045)', 'rgba(29,82,64,.06)'];
+      hourly.forEach((r, i) => {
+        const dia = new Date(r.time).toDateString();
+        if(currentDay === null){ currentDay = dia; bandStart = x.getPixelForValue(i); }
+        else if(dia !== currentDay){
+          const bandEnd = x.getPixelForValue(i);
+          ctx.fillStyle = bandColors[dayIdx % bandColors.length];
+          ctx.fillRect(bandStart, top, bandEnd - bandStart, bottom - top);
+          // línea separadora
+          ctx.strokeStyle = 'rgba(0,0,0,.18)';
+          ctx.lineWidth = 1;
+          ctx.setLineDash([3,3]);
+          ctx.beginPath();
+          ctx.moveTo(bandEnd, top);
+          ctx.lineTo(bandEnd, bottom);
+          ctx.stroke();
+          ctx.setLineDash([]);
+          // etiqueta del día
+          ctx.font = '700 10px -apple-system, sans-serif';
+          ctx.fillStyle = '#5B655E';
+          ctx.textAlign = 'left';
+          const label = new Date(hourly[i-1].time).toLocaleDateString('es-ES', {weekday:'short'}).replace('.','');
+          ctx.fillText(label.charAt(0).toUpperCase() + label.slice(1), bandStart + 4, top + 12);
+          dayIdx++;
+          currentDay = dia;
+          bandStart = bandEnd;
+        }
+      });
+      // última banda
+      ctx.fillStyle = bandColors[dayIdx % bandColors.length];
+      ctx.fillRect(bandStart, top, right - bandStart, bottom - top);
+      ctx.font = '700 10px -apple-system, sans-serif';
+      ctx.fillStyle = '#5B655E';
+      ctx.textAlign = 'left';
+      const lastLabel = new Date(hourly[hourly.length-1].time).toLocaleDateString('es-ES', {weekday:'short'}).replace('.','');
+      ctx.fillText(lastLabel.charAt(0).toUpperCase() + lastLabel.slice(1), bandStart + 4, top + 12);
+      ctx.restore();
+    }
+  };
+}
+
+function labels3d(hourly){
+  // Etiqueta horas: solo cada 6 h para no saturar
+  return hourly.map(r => {
+    const h = new Date(r.time).getHours();
+    return (h % 6 === 0) ? (h + 'h') : '';
+  });
+}
+
+function options3d(unit, thresholds, yOpts){
+  const base = commonOptions(unit, thresholds, yOpts);
+  base.scales.x.ticks.autoSkip = false;
+  base.scales.x.ticks.maxRotation = 0;
+  base.plugins.tooltip.callbacks.title = (items) => {
+    if(!items || !items.length) return '';
+    const idx = items[0].dataIndex;
+    const raw = items[0].chart.data._times && items[0].chart.data._times[idx];
+    if(!raw) return items[0].label;
+    const d = new Date(raw);
+    return d.toLocaleDateString('es-ES', {weekday:'short', day:'2-digit', month:'short'})
+      + ' · ' + d.toLocaleTimeString('es-ES', {hour:'2-digit', minute:'2-digit'});
+  };
+  return base;
+}
+
+async function loadForecast3d(){
+  const loading = el('fc3dLoading');
+  const body = el('fc3dBody');
+  loading.style.display = 'block';
+  loading.textContent = 'Cargando previsión…';
+  body.style.display = 'none';
+
+  try{
+    if(typeof Chart === 'undefined'){
+      throw new Error('No se ha podido cargar la librería de gráficas (Chart.js).');
+    }
+    const { hourly, days } = await fetchForecast3d();
+    el('fc3dTitle').textContent = 'Previsión 3 días · ' + (current ? current.name : '—');
+    const primera = new Date(hourly[0].time);
+    const ultima  = new Date(hourly[hourly.length-1].time);
+    el('fc3dSub').textContent =
+      primera.toLocaleDateString('es-ES', {day:'2-digit', month:'short'}) + ' → ' +
+      ultima.toLocaleDateString('es-ES', {day:'2-digit', month:'short'});
+
+    renderD3DayCards(days);
+
+    destroyForecast3dCharts();
+    loading.style.display = 'none';
+    body.style.display = 'block';
+
+    const labels = labels3d(hourly);
+    const times = hourly.map(r => r.time);
+    const dayBands = makeDayBandsPlugin(hourly);
+
+    // --- Temperatura horaria + máx/mín por día como líneas horizontales de referencia ---
+    // Serie de máximos/mínimos diarios expandida a las 72 horas (para línea escalonada)
+    const tmaxExpand = hourly.map(r => {
+      const dia = r.time.slice(0,10);
+      const d = days.find(x => x.date === dia);
+      return d ? d.tmax : null;
+    });
+    const tminExpand = hourly.map(r => {
+      const dia = r.time.slice(0,10);
+      const d = days.find(x => x.date === dia);
+      return d ? d.tmin : null;
+    });
+
+    forecast3dCharts.temp = new Chart(el('chart3dTemp').getContext('2d'), {
+      type: 'line',
+      data: {
+        _times: times,
+        labels,
+        datasets: [
+          { label: 'Temperatura (°C)', data: hourly.map(r => r.temp),
+            borderColor: '#1D5240', backgroundColor: 'rgba(29,82,64,.08)',
+            borderWidth: 2, tension: .3, pointRadius: 0, fill: true },
+          { label: 'Máx. diaria', data: tmaxExpand,
+            borderColor: '#B23B2E', backgroundColor: 'transparent',
+            borderWidth: 1.4, borderDash: [4,4], stepped: true, pointRadius: 0, fill: false },
+          { label: 'Mín. diaria', data: tminExpand,
+            borderColor: '#2472a8', backgroundColor: 'transparent',
+            borderWidth: 1.4, borderDash: [4,4], stepped: true, pointRadius: 0, fill: false }
+        ]
+      },
+      options: options3d('°C'),
+      plugins: [ dayBands ]
+    });
+
+    // --- Humedad ---
+    forecast3dCharts.hum = new Chart(el('chart3dHum').getContext('2d'), {
+      type: 'line',
+      data: {
+        _times: times,
+        labels,
+        datasets: [
+          { label: 'Humedad (%)', data: hourly.map(r => r.hum),
+            borderColor: '#2E5E3F', backgroundColor: 'rgba(46,94,63,.12)',
+            borderWidth: 2, tension: .3, pointRadius: 0, fill: true }
+        ]
+      },
+      options: options3d('%', [
+        { value: 30, color: '#B23B2E', label: '30% · riesgo alto' },
+        { value: 40, color: '#B8722E', label: '40% · vigilancia' }
+      ], { suggestedMin: 0, suggestedMax: 100 }),
+      plugins: [ dayBands, thresholdPlugin ]
+    });
+
+    // --- Viento y rachas ---
+    forecast3dCharts.wind = new Chart(el('chart3dWind').getContext('2d'), {
+      type: 'line',
+      data: {
+        _times: times,
+        labels,
+        datasets: [
+          { label: 'Viento (km/h)', data: hourly.map(r => r.wind),
+            borderColor: '#1D5240', backgroundColor: 'rgba(29,82,64,.08)',
+            borderWidth: 2, tension: .3, pointRadius: 0, fill: true },
+          { label: 'Rachas (km/h)', data: hourly.map(r => r.gust),
+            borderColor: '#B23B2E', backgroundColor: 'transparent',
+            borderWidth: 1.6, borderDash: [5,4], tension: .3, pointRadius: 0, fill: false }
+        ]
+      },
+      options: options3d('km/h', [
+        { value: 30, color: '#B23B2E', label: '30 km/h · riesgo alto' },
+        { value: 20, color: '#B8722E', label: '20 km/h · vigilancia' }
+      ], { suggestedMin: 0 }),
+      plugins: [ dayBands, thresholdPlugin ]
+    });
+
+    // --- Lluvia: barras (probabilidad) + línea (mm/h) en eje secundario ---
+    const opts = options3d('%', null, { suggestedMin: 0, suggestedMax: 100 });
+    opts.scales.y1 = {
+      position: 'right',
+      suggestedMin: 0,
+      grid: { drawOnChartArea: false },
+      ticks: { font: { size: 10 }, color: '#1565C0', callback: v => v + ' mm' }
+    };
+    opts.plugins.tooltip.callbacks.label = (c) => {
+      if(c.dataset.yAxisID === 'y1') return `${c.dataset.label}: ${c.parsed.y != null ? Math.round(c.parsed.y * 10)/10 : '—'} mm`;
+      return `${c.dataset.label}: ${c.parsed.y != null ? Math.round(c.parsed.y) : '—'} %`;
+    };
+    forecast3dCharts.rain = new Chart(el('chart3dRain').getContext('2d'), {
+      type: 'bar',
+      data: {
+        _times: times,
+        labels,
+        datasets: [
+          { type:'bar', label: 'Prob. lluvia (%)', data: hourly.map(r => r.rainP),
+            backgroundColor: 'rgba(21,101,192,.55)', borderColor:'#1565C0',
+            borderWidth: 0, borderRadius: 2, categoryPercentage: 1, barPercentage: 1, yAxisID:'y' },
+          { type:'line', label: 'Precipitación (mm/h)', data: hourly.map(r => r.rainM),
+            borderColor: '#0D3B66', backgroundColor: 'rgba(13,59,102,.15)',
+            borderWidth: 1.8, tension: .3, pointRadius: 0, fill: true, yAxisID:'y1' }
+        ]
+      },
+      options: opts,
+      plugins: [ dayBands ]
+    });
+
+  }catch(err){
+    console.error('Error cargando la previsión 3 días:', err);
+    destroyForecast3dCharts();
+    body.style.display = 'none';
+    loading.style.display = 'block';
+    loading.textContent = 'No se pudo cargar la previsión' + (err && err.message ? ': ' + err.message : '') + '.';
+  }
+}
+
+el('forecastPdfBtn').addEventListener('click', generateForecastPdf);
+
+async function generateForecastPdf(){
+  const btn = el('forecastPdfBtn');
+  const original = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Generando PDF…';
+  hideError();
+
+  try{
+    if(!window.jspdf || !window.jspdf.jsPDF){
+      throw new Error('No se ha podido cargar la librería de generación de PDF (jsPDF). Comprueba tu conexión a internet.');
+    }
+
+    const rows = await fetchForecastRows();
+    const riesgo = clasificarRiesgoHoras(rows);
+
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+    const pageWidth = doc.internal.pageSize.getWidth();
+
+    doc.setFillColor(29, 82, 64);
+    doc.rect(0, 0, pageWidth, 26, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(15);
+    doc.setFont(undefined, 'bold');
+    doc.text('Previsión meteorológica · Próximas 12 horas', 14, 12);
+    doc.setFontSize(10);
+    doc.setFont(undefined, 'normal');
+    doc.text('Meteorología', 14, 19);
+
+    doc.setTextColor(27, 33, 29);
+    let y = 36;
+    doc.setFontSize(12);
+    doc.setFont(undefined, 'bold');
+    const locDetailText = el('locDetail').style.display !== 'none' ? el('locDetail').textContent : '';
+    const esCoordenadas = /^-?\d+\.\d+,\s*-?\d+\.\d+$/.test(locDetailText.trim());
+    const lugarTitulo = current.name + (locDetailText && locDetailText !== 'Localizando…' && !esCoordenadas ? ` (${locDetailText})` : '');
+    doc.text(`Ubicación: ${lugarTitulo}`, 14, y);
+    y += 6;
+    doc.setFontSize(9.5);
+    doc.setFont(undefined, 'normal');
+    doc.text(`Generado: ${new Date().toLocaleString('es-ES')}`, 14, y);
+    y += 8;
+
+    const tableRows = rows.map(r => {
+      const hora = new Date(r.time).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+      return [
+        hora,
+        r.temp != null ? `${Math.round(r.temp)}°` : '—',
+        r.hum != null ? `${Math.round(r.hum)}%` : '—',
+        r.wind != null ? `${Math.round(r.wind)}` : '—',
+        r.dir != null ? `${windCardinal(r.dir)}` : '—',
+        r.gust != null ? `${Math.round(r.gust)}` : '—',
+        r.rain != null ? `${Math.round(r.rain)}%` : '—',
+        r.storm != null ? `${Math.round(r.storm)}%` : '—'
+      ];
+    });
+
+    doc.autoTable({
+      startY: y,
+      head: [['Hora', 'Temp.', 'Hum.', 'Viento', 'Dir.', 'Rachas', 'Lluvia', 'Tormenta']],
+      body: tableRows,
+      theme: 'grid',
+      headStyles: { fillColor: [29, 82, 64], textColor: 255, fontSize: 9 },
+      styles: { fontSize: 8.5, cellPadding: 2 },
+      margin: { left: 14, right: 14 }
+    });
+
+    let finalY = doc.lastAutoTable.finalY + 10;
+
+    doc.setFontSize(10.5);
+    doc.setFont(undefined, 'bold');
+    doc.text('Valoración orientativa de riesgo de incendio', 14, finalY);
+    finalY += 6;
+    doc.setFontSize(9.5);
+    doc.setFont(undefined, 'normal');
+    const riesgoLines = doc.splitTextToSize(riesgo.texto, pageWidth - 28);
+    doc.text(riesgoLines, 14, finalY);
+    finalY += riesgoLines.length * 5 + 4;
+    doc.setFontSize(8.5);
+    doc.setTextColor(91, 101, 94);
+    const umbralLines = doc.splitTextToSize(
+      'Umbrales: humedad ≤30% y viento ≥20 km/h (riesgo alto); humedad ≤40% o viento ≥20 km/h (riesgo moderado).',
+      pageWidth - 28
+    );
+    doc.text(umbralLines, 14, finalY);
+    finalY += umbralLines.length * 4.5 + 6;
+
+    doc.setFontSize(8);
+    const footerLines = doc.splitTextToSize(
+      'Fuente: Open-Meteo (previsión horaria). Datos orientativos, no sustituyen fuentes oficiales (AEMET) para decisiones operativas. Meteorología v22.',
+      pageWidth - 28
+    );
+    doc.text(footerLines, 14, finalY);
+
+    // --- Gráficas de la previsión ---
+    try{
+      if(typeof Chart === 'undefined') throw new Error('Chart.js no está disponible');
+      const labels = rows.map(r => new Date(r.time).getHours() + 'h');
+
+      const imgTemp = crearImagenGrafica(labels, [
+        { label: 'Temperatura (°C)', data: rows.map(r => r.temp), borderColor: '#1D5240', backgroundColor: '#1D5240' },
+        { label: 'Sensación térmica (°C)', data: rows.map(r => r.feels), borderColor: '#B8722E', backgroundColor: '#B8722E', borderDash: [6, 4] }
+      ]);
+      const imgHum = crearImagenGrafica(labels, [
+        { label: 'Humedad relativa (%)', data: rows.map(r => r.hum), borderColor: '#2E5E3F', backgroundColor: '#2E5E3F' }
+      ]);
+      const imgWind = crearImagenGrafica(labels, [
+        { label: 'Viento (km/h)', data: rows.map(r => r.wind), borderColor: '#1D5240', backgroundColor: '#1D5240' },
+        { label: 'Rachas (km/h)', data: rows.map(r => r.gust), borderColor: '#B23B2E', backgroundColor: '#B23B2E', borderDash: [6, 4] }
+      ], { directions: rows.map(r => r.dir), arrowDatasetIndex: 0, arrowSize: 22, arrowColor: '#1565C0' });
+      const imgRain = crearImagenGrafica(labels, [
+        { label: 'Prob. lluvia (%)',   data: rows.map(r => r.rain),  borderColor: '#1565C0', backgroundColor: 'rgba(21,101,192,.75)' },
+        { label: 'Prob. tormenta (%)', data: rows.map(r => r.storm), borderColor: '#B23B2E', backgroundColor: 'rgba(178,59,46,.75)' }
+      ], { type: 'bar' });
+
+      doc.addPage();
+      doc.setTextColor(27, 33, 29);
+      doc.setFontSize(12);
+      doc.setFont(undefined, 'bold');
+      doc.text('Evolución prevista · próximas 12 h', 14, 16);
+
+      const imgW = pageWidth - 28;
+      const imgH = imgW * 0.42;
+      let chartY = 22;
+      doc.addImage(imgTemp, 'PNG', 14, chartY, imgW, imgH);
+      chartY += imgH + 8;
+      doc.addImage(imgHum, 'PNG', 14, chartY, imgW, imgH);
+      chartY += imgH + 8;
+      doc.addImage(imgWind, 'PNG', 14, chartY, imgW, imgH);
+      doc.setFontSize(8);
+      doc.setTextColor(91, 101, 94);
+      doc.text('Las flechas sobre la línea de viento indican la dirección hacia la que sopla el viento.', 14, chartY + imgH + 5);
+
+      doc.addPage();
+      doc.setTextColor(27, 33, 29);
+      doc.setFontSize(12);
+      doc.setFont(undefined, 'bold');
+      doc.text('Probabilidad de lluvia y tormenta · próximas 12 h', 14, 16);
+      doc.addImage(imgRain, 'PNG', 14, 22, imgW, imgH);
+      doc.setFontSize(8);
+      doc.setTextColor(91, 101, 94);
+      const notaRain = doc.splitTextToSize(
+        'Lluvia: probabilidad de precipitación del modelo Open-Meteo. Tormenta: estimación a partir del código de tiempo WMO (95/96/99) y del CAPE (energía convectiva). Es un indicador orientativo, no un pronóstico oficial de tormentas.',
+        pageWidth - 28
+      );
+      doc.text(notaRain, 14, 22 + imgH + 6);
+    }catch(chartErr){
+      console.warn('No se pudieron generar las gráficas del PDF de previsión:', chartErr);
+    }
+
+    const nombreArchivo = `Prevision_12h_${current.name.replace(/\s+/g, '_')}_${new Date().toISOString().slice(0,16).replace(/[:T]/g,'-')}.pdf`;
+    doc.save(nombreArchivo);
+
+  }catch(err){
+    console.error('Error generando el PDF de previsión:', err);
+    showError('No se ha podido generar el PDF de previsión' + (err && err.message ? ': ' + err.message : '') + '.');
+  }finally{
+    btn.disabled = false;
+    btn.textContent = original;
+  }
+}
+
+/* ============================================================
+   INCENDIOS ACTIVOS · EFFIS / GWIS (Copernicus) — puntos con
+   fecha de detección, pintados como cuadros según edad:
+     <6 h  → cuadro grande rojo, parpadeo rápido
+     6–12h → cuadro más pequeño naranja, parpadeo
+     1–3 d → cuadro amarillo
+     +3 d  → cuadro gris
+   ============================================================ */
+const EFFIS_WFS = 'https://maps.effis.emergency.copernicus.eu/gwis';
+let fireMap = null;
+let fireLayer = null;
+let fireCenterMarker = null;
+let fireOpen = false;
+let firePeticion = null;
+let fireMoveTimer = null;
+
+function fireCategoria(horas){
+  if(horas < 6)  return {cls:'red',    size:24};
+  if(horas < 12) return {cls:'orange', size:14};
+  if(horas < 72) return {cls:'yellow', size:12};
+  return           {cls:'gray',   size:10};
+}
+
+function fireEdadTexto(horas){
+  if(horas < 1)  return 'hace menos de 1 h';
+  if(horas < 48) return `hace ${Math.round(horas)} h`;
+  return `hace ${Math.round(horas/24)} días`;
+}
+
+function initFireMap(){
+  if(fireMap) return;
+  fireMap = L.map('fireMap', {
+    zoomControl: true,
+    attributionControl: true,
+    tap: true
+  }).setView([current ? current.lat : 40.4, current ? current.lon : -3.7], 9);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(fireMap);
+
+  fireLayer = L.layerGroup().addTo(fireMap);
+
+  fireMap.on('moveend', () => {
+    if(!fireOpen) return;
+    if(fireMoveTimer) clearTimeout(fireMoveTimer);
+    fireMoveTimer = setTimeout(loadFirePoints, 900);
+  });
+
+  setTimeout(() => fireMap.invalidateSize(), 60);
+}
+
+function updateFireCenterMarker(){
+  if(!fireMap || !current) return;
+  if(fireCenterMarker) fireMap.removeLayer(fireCenterMarker);
+  fireCenterMarker = L.circleMarker([current.lat, current.lon], {
+    radius: 6, color: '#1D5240', weight: 2, fillColor:'#fff', fillOpacity:1
+  }).addTo(fireMap).bindTooltip(current.name);
+}
+
+function fechaFoco(acq){
+  if(!acq) return null;
+  const d = new Date(String(acq).trim().replace(' ', 'T') + 'Z');
+  return isNaN(d) ? null : d;
+}
+
+function popupFoco(f){
+  const fecha = f.fecha ? f.fecha.toLocaleString('es-ES') : '—';
+  return `<b>Foco activo</b><br>` +
+    `Detección: ${fecha} UTC<br>` +
+    `Antigüedad: ${fireEdadTexto(f.horas)}<br>` +
+    `Sensor: ${f.sensor || '—'}<br>` +
+    `Coords: ${f.lat.toFixed(4)}, ${f.lon.toFixed(4)}`;
+}
+
+function pintarFocos(focos){
+  fireLayer.clearLayers();
+  // Ordenamos para dibujar los más antiguos primero: así los rojos quedan encima
+  focos.sort((a,b) => b.horas - a.horas).forEach(f => {
+    const cat = fireCategoria(f.horas);
+    const marker = L.marker([f.lat, f.lon], {
+      icon: L.divIcon({
+        className: '',
+        html: `<span class="fire-sq ${cat.cls}"></span>`,
+        iconSize:   [cat.size, cat.size],
+        iconAnchor: [cat.size/2, cat.size/2]
+      }),
+      keyboard: false,
+      riseOnHover: true
+    });
+    marker.bindPopup(popupFoco(f));
+    marker.addTo(fireLayer);
+  });
+  // Mantener el marcador de ubicación por encima
+  if(fireCenterMarker){
+    fireCenterMarker.remove();
+    fireCenterMarker.addTo(fireMap);
+  }
+}
+
+async function loadFirePoints(){
+  if(!fireMap) return;
+  const status = el('fireStatus');
+  status.classList.remove('err');
+
+  const b = fireMap.getBounds();
+  const ancho = b.getEast() - b.getWest();
+  const alto  = b.getNorth() - b.getSouth();
+  if(ancho > 25 || alto > 25){
+    status.textContent = 'Encuadre muy grande. Acércate un poco (a nivel de provincia o comarca) para consultar los focos.';
+    fireLayer.clearLayers();
+    return;
+  }
+
+  const periodo = el('firePeriodo').value;   // today | week | month
+  const sensor  = el('fireSensor').value;    // all | viirs | modis | s3
+  const capa    = `${sensor}.hs.${periodo}`;
+
+  const bbox = [b.getSouth(), b.getWest(), b.getNorth(), b.getEast()].map(v=>v.toFixed(4)).join(',') + ',EPSG:4326';
+  const url = EFFIS_WFS + '?service=WFS&version=1.1.0&request=GetFeature' +
+    '&typename=ms:' + encodeURIComponent(capa) +
+    '&outputformat=' + encodeURIComponent('application/json; subtype=geojson') +
+    '&srsname=EPSG:4326&bbox=' + encodeURIComponent(bbox);
+
+  if(firePeticion) firePeticion.abort();
+  firePeticion = new AbortController();
+  const control = firePeticion;
+  const timeout = setTimeout(() => { control.agotado = true; control.abort(); }, 90000);
+
+  status.textContent = 'Consultando EFFIS… (puede tardar hasta un minuto)';
+
+  try{
+    const res = await fetch(url, {signal: control.signal});
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    const ahora = Date.now();
+
+    const focos = (data.features || []).map(f => {
+      const c = f.geometry && f.geometry.coordinates;
+      if(!c) return null;
+      const p = f.properties || {};
+      const fecha = fechaFoco(p.acq_at);
+      return {
+        lat: c[1], lon: c[0], fecha,
+        horas: fecha ? (ahora - fecha.getTime())/3600000 : 9999,
+        sensor: p.satellite || p.sensor || null
+      };
+    }).filter(Boolean);
+
+    pintarFocos(focos);
+
+    const hora = new Date().toLocaleTimeString('es-ES', {hour:'2-digit', minute:'2-digit'});
+    if(!focos.length){
+      status.textContent = `Sin detecciones en este encuadre para el periodo elegido (a las ${hora}).`;
+    } else {
+      const n6 = focos.filter(f => f.horas < 6).length;
+      const n12 = focos.filter(f => f.horas >= 6 && f.horas < 12).length;
+      const n72 = focos.filter(f => f.horas >= 12 && f.horas < 72).length;
+      const nMas = focos.length - n6 - n12 - n72;
+      status.textContent = `${focos.length} focos · <6h: ${n6} · 6–12h: ${n12} · 1–3d: ${n72} · +3d: ${nMas} (a las ${hora}).`;
+    }
+  }catch(err){
+    if(err.name === 'AbortError'){
+      if(!control.agotado) return;
+      status.textContent = 'EFFIS no ha contestado en 90 s. Su servidor se satura con frecuencia: pulsa «Actualizar» o prueba con «Hoy».';
+      status.classList.add('err');
+      return;
+    }
+    console.error('EFFIS error:', err);
+    status.textContent = `No se pudo consultar EFFIS (${err.message}). Prueba otra vez en unos segundos.`;
+    status.classList.add('err');
+  }finally{
+    clearTimeout(timeout);
+    if(firePeticion === control) firePeticion = null;
+  }
+}
+
+function centerFireMap(){
+  if(!fireMap || !current) return;
+  fireMap.setView([current.lat, current.lon], 9);
+  updateFireCenterMarker();
+}
+
+el('fireBtn').addEventListener('click', () => {
+  fireOpen = !fireOpen;
+  const panel = el('firePanel');
+  const btn = el('fireBtn');
+  if(fireOpen){
+    panel.style.display = 'block';
+    btn.classList.add('open');
+    btn.textContent = '🔥 Ocultar incendios activos';
+    if(typeof L === 'undefined'){
+      el('fireStatus').textContent = 'No se pudo cargar Leaflet. Revisa tu conexión.';
+      el('fireStatus').classList.add('err');
+      return;
+    }
+    initFireMap();
+    centerFireMap();
+    loadFirePoints();
+    setTimeout(() => {
+      fireMap.invalidateSize();
+      panel.scrollIntoView({behavior:'smooth', block:'start'});
+    }, 80);
+  } else {
+    panel.style.display = 'none';
+    btn.classList.remove('open');
+    btn.textContent = '🔥 Incendios activos ahora mismo';
+  }
+  actualizarBotonInicio();
+});
+
+el('firePeriodo').addEventListener('change', () => { if(fireOpen) loadFirePoints(); });
+el('fireSensor').addEventListener('change',  () => { if(fireOpen) loadFirePoints(); });
+el('fireReloadBtn').addEventListener('click', () => { if(fireOpen) loadFirePoints(); });
+
+/* ============================================================
+   VIENTO SOBRE EL MAPA · Malla + flujo animado (Open-Meteo)
+   Panel plegable con su propio mapa Leaflet. Al pulsar «Cargar»
+   se reparte una malla en el encuadre y se pide la previsión
+   horaria de todos los puntos en una sola llamada; el slider
+   horario recorre las horas sin volver a pedir nada.
+   ============================================================ */
+(function(){
+  let windMap = null, windMarkerLayer = null, windFlowLayer = null;
+  let windOpen = false;
+  let malla = null;             // {puntos, horas:[Date], datos:[{v,d,g,t,h}], densidad, cols, filas}
+  let windAnimTimer = null;
+  let windCenterMarker = null;
+
+  const RUMBOS = ['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSO','SO','OSO','O','ONO','NO','NNO'];
+  const rumbo = g => RUMBOS[Math.round(((g%360)+360)%360 / 22.5) % 16];
+  const colorViento = kmh => kmh<10?'#2D9CDB':kmh<20?'#27AE60':kmh<30?'#F2C94C':kmh<40?'#F2994A':'#D7263D';
+
+  function initWindMap(){
+    if(windMap) return;
+    windMap = L.map('windMap', {zoomControl:true, tap:true})
+      .setView([current ? current.lat : 40.4, current ? current.lon : -3.7], 8);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom:18, attribution:'&copy; OpenStreetMap contributors'
+    }).addTo(windMap);
+    windMarkerLayer = L.layerGroup().addTo(windMap);
+    windFlowLayer = new CapaFlujoViento();
+
+    updateWindCenter();
+    setTimeout(() => windMap.invalidateSize(), 60);
+  }
+  function updateWindCenter(){
+    if(!windMap || !current) return;
+    if(windCenterMarker) windMap.removeLayer(windCenterMarker);
+    windCenterMarker = L.circleMarker([current.lat, current.lon], {
+      radius:6, color:'#1D5240', weight:2, fillColor:'#fff', fillOpacity:1
+    }).addTo(windMap).bindTooltip(current.name);
+  }
+  function centerWindMap(){
+    if(!windMap || !current) return;
+    windMap.setView([current.lat, current.lon], 9);
+    updateWindCenter();
+  }
+
+  function puntosDeLaMalla(cols){
+    const filas = Math.max(3, Math.round(cols * 0.8));
+    const b = windMap.getBounds();
+    const s = b.getSouth(), n = b.getNorth(), o = b.getWest(), e = b.getEast();
+    const my = (n - s) * 0.08, mx = (e - o) * 0.08;
+    const y0 = s + my, y1 = n - my, x0 = o + mx, x1 = e - mx;
+    const puntos = [];
+    for(let j=0; j<filas; j++){
+      for(let i=0; i<cols; i++){
+        puntos.push({
+          lat: y0 + (y1 - y0) * (filas === 1 ? 0.5 : j/(filas-1)),
+          lon: x0 + (x1 - x0) * (cols  === 1 ? 0.5 : i/(cols-1))
+        });
+      }
+    }
+    return {puntos, cols, filas};
+  }
+
+  async function cargarViento(){
+    if(!windMap) return;
+    const sub = el('windSub');
+    const b = windMap.getBounds();
+    if(b.getEast() - b.getWest() > 25 || b.getNorth() - b.getSouth() > 25){
+      sub.textContent = 'Encuadre muy grande. Acércate.';
+      return;
+    }
+    const cols = 4;   // densidad fija (más baja) — malla 4×3
+    const {puntos, filas} = puntosDeLaMalla(cols);
+    sub.textContent = `Pidiendo ${puntos.length} puntos…`;
+    try{
+      const url = 'https://api.open-meteo.com/v1/forecast' +
+        '?latitude='  + puntos.map(p => p.lat.toFixed(4)).join(',') +
+        '&longitude=' + puntos.map(p => p.lon.toFixed(4)).join(',') +
+        '&hourly=wind_speed_10m,wind_direction_10m,wind_gusts_10m' +
+        '&wind_speed_unit=kmh&forecast_days=2&timezone=Europe%2FMadrid';
+      const res = await fetch(url);
+      if(!res.ok) throw new Error('HTTP ' + res.status);
+      let data = await res.json();
+      if(!Array.isArray(data)) data = [data];
+      malla = {
+        puntos, cols, filas, densidad: cols,
+        horas: data[0].hourly.time.map(iso => new Date(iso)),
+        datos: data.map(d => ({
+          v: d.hourly.wind_speed_10m,
+          d: d.hourly.wind_direction_10m,
+          g: d.hourly.wind_gusts_10m
+        }))
+      };
+      const slider = el('windHora');
+      slider.max = malla.horas.length - 1;
+      slider.disabled = false;
+      slider.value = indiceHoraActual();
+      pintarViento();
+      const desde = malla.horas[0], hasta = malla.horas[malla.horas.length-1];
+      const fmt = d => d.toLocaleString('es-ES',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});
+      sub.textContent = `${puntos.length} puntos · ${fmt(desde)} → ${fmt(hasta)}`;
+    }catch(err){
+      console.error(err);
+      sub.textContent = 'No se pudo consultar Open-Meteo (' + err.message + ').';
+    }
+  }
+
+  function indiceHoraActual(){
+    if(!malla) return 0;
+    const ahora = new Date();
+    let mejor = 0, dif = Infinity;
+    malla.horas.forEach((h,i) => {
+      const d = Math.abs(h - ahora);
+      if(d < dif){ dif = d; mejor = i; }
+    });
+    return mejor;
+  }
+
+  function construirCampoViento(idx){
+    if(!malla) return null;
+    const {cols, filas, puntos, datos} = malla;
+    if(puntos.length < filas*cols) return null;
+    const lat0 = puntos[0].lat, lon0 = puntos[0].lon;
+    const latN = puntos[(filas-1)*cols].lat, lonN = puntos[cols-1].lon;
+    const n = filas*cols;
+    const U = new Float32Array(n), W = new Float32Array(n), S = new Float32Array(n);
+    const ok = new Uint8Array(n);
+    for(let k=0; k<n; k++){
+      const s = datos[k];
+      const v = s ? s.v[idx] : null, d = s ? s.d[idx] : null;
+      if(v == null || d == null){ ok[k] = 0; continue; }
+      const rad = ((d + 180) % 360) * Math.PI/180;
+      U[k] = Math.sin(rad) * v;
+      W[k] = Math.cos(rad) * v;
+      S[k] = v; ok[k] = 1;
+    }
+    return {cols, filas, lat0, lon0, latN, lonN, U, W, S, ok};
+  }
+  function campoVientoEn(campo, lat, lon, clamp){
+    const {cols, filas, lat0, lon0, latN, lonN, U, W, S, ok} = campo;
+    let fj = (lat - lat0)/(latN - lat0) * (filas - 1);
+    let fi = (lon - lon0)/(lonN - lon0) * (cols - 1);
+    if(fj < 0 || fj > filas-1 || fi < 0 || fi > cols-1){
+      if(!clamp) return null;
+      fj = Math.max(0, Math.min(filas-1, fj));
+      fi = Math.max(0, Math.min(cols-1, fi));
+    }
+    const j0 = Math.floor(fj), i0 = Math.floor(fi);
+    const j1 = Math.min(j0+1, filas-1), i1 = Math.min(i0+1, cols-1);
+    const tj = fj - j0, ti = fi - i0;
+    const k00=j0*cols+i0, k01=j0*cols+i1, k10=j1*cols+i0, k11=j1*cols+i1;
+    if(!(ok[k00] && ok[k01] && ok[k10] && ok[k11])) return null;
+    const L2 = (a,b,t) => a + (b-a)*t;
+    return {
+      u:   L2(L2(U[k00],U[k01],ti), L2(U[k10],U[k11],ti), tj),
+      w:   L2(L2(W[k00],W[k01],ti), L2(W[k10],W[k11],ti), tj),
+      spd: L2(L2(S[k00],S[k01],ti), L2(S[k10],S[k11],ti), tj)
+    };
+  }
+  const colorFlujoViento = spd => {
+    const t = Math.max(0, Math.min(1, spd/45));
+    return `hsla(205, 95%, ${Math.round(48 + t*30)}%, .95)`;
+  };
+
+  // Capa Leaflet de flujo animado (estilo Windy), adaptada del V23
+  const CapaFlujoViento = L.Layer.extend({
+    onAdd(map){
+      this._map = map;
+      if(!map.getPane('flujoViento')){
+        map.createPane('flujoViento');
+        map.getPane('flujoViento').style.zIndex = 290;
+        map.getPane('flujoViento').style.pointerEvents = 'none';
+      }
+      this._lienzo = L.DomUtil.create('canvas', 'leaflet-zoom-hide', map.getPane('flujoViento'));
+      this._ctx = this._lienzo.getContext('2d');
+      this._particulas = [];
+      map.on('movestart zoomstart', this._ocultar, this);
+      map.on('moveend zoomend resize', this._reiniciar, this);
+      this._redimensionar();
+      this._reiniciar();
+      return this;
+    },
+    onRemove(map){
+      this._parar();
+      map.off('movestart zoomstart', this._ocultar, this);
+      map.off('moveend zoomend resize', this._reiniciar, this);
+      if(this._lienzo) L.DomUtil.remove(this._lienzo);
+      this._lienzo = null; this._ctx = null;
+    },
+    setCampo(campo){ this._campo = campo; if(this._map) this._reiniciar(); },
+    _redimensionar(){
+      if(!this._lienzo) return;
+      const s = this._map.getSize();
+      this._lienzo.width = s.x; this._lienzo.height = s.y;
+    },
+    _reposicionar(){
+      const tl = this._map.containerPointToLayerPoint([0,0]);
+      L.DomUtil.setPosition(this._lienzo, tl);
+    },
+    _ocultar(){
+      this._parar();
+      if(this._ctx) this._ctx.clearRect(0,0,this._lienzo.width,this._lienzo.height);
+      if(this._lienzo) this._lienzo.style.opacity = 0;
+    },
+    _reiniciar(){
+      if(!this._lienzo) return;
+      this._redimensionar();
+      this._reposicionar();
+      this._lienzo.style.opacity = 1;
+      this._ctx.clearRect(0,0,this._lienzo.width,this._lienzo.height);
+      const c = this._map.getCenter();
+      const p0 = this._map.latLngToContainerPoint(c);
+      const pE = this._map.latLngToContainerPoint([c.lat, c.lng + 0.1]);
+      const pN = this._map.latLngToContainerPoint([c.lat + 0.1, c.lng]);
+      const kmE = 0.1 * 111.32 * Math.cos(c.lat*Math.PI/180);
+      const kmN = 0.1 * 110.57;
+      this._pxKmX = Math.abs(pE.x - p0.x) / (kmE || 1);
+      this._pxKmY = Math.abs(pN.y - p0.y) / (kmN || 1);
+      const quieto = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(!this._campo || quieto){ this._parar(); return; }
+      const w = this._lienzo.width, h = this._lienzo.height;
+      // menos partículas en móvil para no sobrecargar
+      const n = Math.max(150, Math.min(900, Math.round(w*h/3200)));
+      this._particulas = [];
+      for(let i=0;i<n;i++) this._particulas.push(this._nueva());
+      this._arrancar();
+    },
+    _nueva(){
+      return {
+        x: Math.random()*this._lienzo.width,
+        y: Math.random()*this._lienzo.height,
+        edad: Math.round(Math.random()*this._MAX_EDAD)
+      };
+    },
+    _MAX_EDAD: 100,
+    _PASO: 1.4,
+    _arrancar(){ if(!this._req) this._req = requestAnimationFrame(() => this._paso()); },
+    _parar(){ if(this._req){ cancelAnimationFrame(this._req); this._req = null; } },
+    _paso(){
+      this._req = null;
+      const ctx = this._ctx, campo = this._campo;
+      if(!ctx || !campo){ return; }
+      const w = this._lienzo.width, h = this._lienzo.height;
+      ctx.globalCompositeOperation = 'destination-in';
+      ctx.fillStyle = 'rgba(0,0,0,0.93)';
+      ctx.fillRect(0,0,w,h);
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.lineCap = 'round';
+      const parts = this._particulas;
+      for(let p of parts){
+        if(p.edad > this._MAX_EDAD || p.x < 0 || p.x > w || p.y < 0 || p.y > h){
+          Object.assign(p, this._nueva()); p.edad = 0; continue;
+        }
+        const ll = this._map.containerPointToLatLng([p.x, p.y]);
+        const f = campoVientoEn(campo, ll.lat, ll.lng, true);
+        if(!f || f.spd < 0.4){ p.edad = this._MAX_EDAD + 1; continue; }
+        let vx =  f.u * this._pxKmX;
+        let vy = -f.w * this._pxKmY;
+        const m = Math.hypot(vx, vy) || 1;
+        vx = vx/m * this._PASO; vy = vy/m * this._PASO;
+        const nx = p.x + vx, ny = p.y + vy;
+        ctx.strokeStyle = colorFlujoViento(f.spd);
+        ctx.lineWidth = 1.0 + Math.min(1, f.spd/40)*1.8;
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y); ctx.lineTo(nx, ny); ctx.stroke();
+        p.x = nx; p.y = ny; p.edad++;
+      }
+      this._req = requestAnimationFrame(() => this._paso());
+    }
+  });
+
+  function pintarViento(){
+    if(!malla || !windMarkerLayer) return;
+    windMarkerLayer.clearLayers();
+    const idx = parseInt(el('windHora').value, 10) || 0;
+    const hora = malla.horas[idx];
+    const conRachas = el('windRachas').checked;
+    const flujo = el('windFlujo').checked;
+
+    // Etiqueta de la hora seleccionada
+    const lab = el('windHoraLabel');
+    if(hora){
+      const ahora = new Date();
+      const pasado = hora.getTime() < ahora.getTime() - 30*60*1000;
+      const txt = hora.toLocaleString('es-ES', {weekday:'short', day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit'});
+      lab.innerHTML = `<b>${txt}</b> <span class="tag ${pasado?'hist':'futu'}">${pasado?'histórico':'previsto'}</span>`;
+    }
+
+    // Campo + flujo
+    const campo = construirCampoViento(idx);
+    if(flujo){
+      if(!windMap.hasLayer(windFlowLayer)) windFlowLayer.addTo(windMap);
+      windFlowLayer.setCampo(campo);
+    } else if(windMap.hasLayer(windFlowLayer)){
+      windMap.removeLayer(windFlowLayer);
+    }
+
+    // Marcadores por punto
+    malla.puntos.forEach((p, k) => {
+      const s = malla.datos[k]; if(!s) return;
+      const v = s.v[idx], d = s.d[idx], g = s.g ? s.g[idx] : null;
+      if(v == null || d == null) return;
+      const hacia = (d + 180) % 360;
+      const color = colorViento(v);
+      const html =
+        `<div class="v-etq" style="color:${color};">` +
+          `<span class="v-flecha" style="transform:rotate(${(hacia - 90).toFixed(0)}deg);color:${color};">➤</span>` +
+          `<span>${Math.round(v)}</span>` +
+          (conRachas && g != null ? `<span class="v-racha">↟${Math.round(g)}</span>` : '') +
+        `</div>`;
+      L.marker([p.lat, p.lon], {
+        icon: L.divIcon({className:'', html, iconSize:[0,0]}),
+        keyboard:false
+      }).bindTooltip(
+        `<b style="color:${color};">${Math.round(v)} km/h</b> del ${rumbo(d)} (${Math.round(d)}°)` +
+        (g != null ? `<br>Racha <b style="color:#c62828;">${Math.round(g)} km/h</b>` : '') +
+        `<br><i>${hora.toLocaleString('es-ES',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})}</i>`,
+        {direction:'top'}
+      ).addTo(windMarkerLayer);
+    });
+  }
+
+  function togglePlay(){
+    const btn = el('btnWindPlay');
+    if(windAnimTimer){
+      clearInterval(windAnimTimer); windAnimTimer = null;
+      btn.textContent = '▶'; btn.classList.remove('playing');
+      return;
+    }
+    if(!malla) return;
+    btn.textContent = '⏸'; btn.classList.add('playing');
+    windAnimTimer = setInterval(() => {
+      const slider = el('windHora');
+      let i = parseInt(slider.value, 10) + 1;
+      if(i > parseInt(slider.max, 10)) i = 0;
+      slider.value = i;
+      pintarViento();
+    }, 700);
+  }
+
+  // Wiring
+  el('windBtn').addEventListener('click', () => {
+    windOpen = !windOpen;
+    const panel = el('windPanel');
+    const btn = el('windBtn');
+    if(windOpen){
+      panel.style.display = 'block';
+      btn.classList.add('open');
+      btn.textContent = '🌬 Ocultar viento';
+      if(typeof L === 'undefined'){ el('windSub').textContent = 'Leaflet no se pudo cargar.'; return; }
+      initWindMap();
+      centerWindMap();
+      setTimeout(() => {
+        windMap.invalidateSize();
+        panel.scrollIntoView({behavior:'smooth', block:'start'});
+      }, 80);
+    } else {
+      panel.style.display = 'none';
+      btn.classList.remove('open');
+      btn.textContent = '🌬 Viento sobre el mapa';
+      if(windAnimTimer){ clearInterval(windAnimTimer); windAnimTimer = null;
+        el('btnWindPlay').textContent = '▶'; el('btnWindPlay').classList.remove('playing'); }
+    }
+  });
+
+  el('btnWindCargar').addEventListener('click', cargarViento);
+  el('btnWindSalamanca').addEventListener('click', () => {
+    if(!windMap) return;
+    // Provincia de Salamanca (Castilla y León, España)
+    windMap.fitBounds([[40.05, -6.87], [41.35, -5.13]], {padding:[10,10]});
+  });
+  el('windHora').addEventListener('input', pintarViento);
+  el('windFlujo').addEventListener('change', () => { if(malla) pintarViento(); });
+  el('windRachas').addEventListener('change', () => { if(malla) pintarViento(); });
+  el('btnWindPlay').addEventListener('click', togglePlay);
+
+  // Recentrar al cambiar de ubicación desde el buscador / mi ubicación
+  window.__windRecentrar = () => { if(windOpen && windMap) centerWindMap(); };
+})();
+
+/* ============================================================
+   RAYOS EN TIEMPO REAL · Blitzortung.org
+   WebSocket a los servidores públicos. Cada mensaje llega
+   comprimido en LZW propio de Blitzortung y trae {lat,lon,time
+   (ns), sig[], pol}. Cada rayo se pinta como marker en un mapa
+   Leaflet dedicado. Se retiran solos al cabo de una hora y
+   cambian de color al envejecer.
+   ============================================================ */
+(function(){
+  const REGION_HOSTS = ['ws1.blitzortung.org','ws7.blitzortung.org','ws8.blitzortung.org'];
+  const REGION_BBOX = {
+    eu: [[-25,30],[45,75]],
+    oc: [[90,-50],[180,15]],
+    am: [[-170,-60],[-30,75]]
+  };
+  const REGION_LABEL = { eu:'Europa / África', oc:'Oceanía / Asia', am:'América' };
+  const REGION_CENTER = { eu:[45,10], oc:[0,135], am:[10,-90] };
+  const MAX_AGE_MS = 60*60*1000;   // rayos se retiran a la hora
+
+  let thunderMap = null;
+  let capaRayos = null;
+  let thunderOpen = false;
+  let ws = null, reconnectTimer = null, conectando = false;
+  let currentRegion = 'eu';
+  let seq = 0, total = 0;
+  let wakeLock = null;
+  const rayos = [];
+  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+  function fmtLocal(t){
+    return new Date(t).toLocaleString('es-ES',{
+      day:'2-digit',month:'2-digit',year:'numeric',
+      hour:'2-digit',minute:'2-digit',second:'2-digit'
+    });
+  }
+  function fmtUTC(t){ return new Date(t).toISOString().replace('T',' ').replace('.000Z',' UTC'); }
+  function polTxt(p){ if(p>0) return 'Positiva (+)'; if(p<0) return 'Negativa (−)'; return 'no disponible'; }
+  function intLabel(n){
+    if(!n) return 'no disponible';
+    let cat='baja';
+    if(n>=25) cat='muy alta'; else if(n>=15) cat='alta'; else if(n>=8) cat='media';
+    return `${n} estaciones (${cat})`;
+  }
+  function popupHTML(id, lat, lon, t, nSig, pol){
+    return `<b>⚡ Rayo</b><br>
+      <b>Hora local</b> (${tz}):<br>${fmtLocal(t)}<br>
+      <b>UTC</b>: ${fmtUTC(t)}<br>
+      <b>Intensidad</b>: ${intLabel(nSig)}<br>
+      <b>Polaridad</b>: ${polTxt(pol)}<br>
+      <b>Lat</b>: ${lat.toFixed(5)}<br>
+      <b>Lon</b>: ${lon.toFixed(5)}<br>
+      <button onclick="window.__descargarRayoKMZ(${id})" style="margin-top:6px;padding:4px 10px;font-size:11.5px;border:1px solid #6f2fbd;background:#fff;color:#6f2fbd;border-radius:6px;cursor:pointer;">⬇ KMZ de este rayo</button>`;
+  }
+
+  function setStatus(ok, txt){
+    const box = el('thunderStatus');
+    box.classList.toggle('ok', !!ok);
+    el('thunderStatusTxt').textContent = txt;
+  }
+
+  /* Descompresor LZW propio de Blitzortung */
+  function bo_decode(b){
+    const e={}, d=b.split(''); let c=d[0], f=c; const g=[c];
+    let h=256, o=h;
+    for(let n=1;n<d.length;n++){
+      const a = d[n].charCodeAt(0);
+      let s = h>a ? d[n] : (e[a] ? e[a] : (f+c));
+      g.push(s);
+      c = s.charAt(0);
+      e[o] = f+c; o++; f = s;
+    }
+    return g.join('');
+  }
+
+  function initThunderMap(){
+    if(thunderMap) return;
+    const c = REGION_CENTER[currentRegion] || [45,10];
+    thunderMap = L.map('thunderMap', {
+      zoomControl:true, attributionControl:true, tap:true
+    }).setView(c, 4);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom:18, attribution:'&copy; OpenStreetMap contributors'
+    }).addTo(thunderMap);
+    capaRayos = L.layerGroup().addTo(thunderMap);
+    setTimeout(() => thunderMap.invalidateSize(), 60);
+  }
+
+  function addStrike(lat, lon, t, nSig, pol){
+    if(!capaRayos) return;
+    const id = ++seq;
+    const icon = L.divIcon({className:'', html:'<div class="rayo-mk"></div>', iconSize:[14,14], iconAnchor:[7,7]});
+    const marker = L.marker([lat,lon], {icon, interactive:true, keyboard:false, bubblingMouseEvents:false})
+      .bindPopup(popupHTML(id, lat, lon, t, nSig, pol));
+    marker.addTo(capaRayos);
+
+    const haloIcon = L.divIcon({className:'', html:'<div class="rayo-halo"></div>', iconSize:[60,60], iconAnchor:[30,30]});
+    const halo = L.marker([lat,lon], {icon:haloIcon, interactive:false, keyboard:false});
+    halo.addTo(capaRayos);
+    setTimeout(() => { try{ capaRayos.removeLayer(halo); }catch(e){} }, 1300);
+
+    rayos.push({id, t, lat, lon, nSig, pol, marker});
+    total++;
+    el('thunderCntTot').textContent = total.toLocaleString('es-ES');
+    el('thunderLast').textContent = new Date(t).toLocaleTimeString('es-ES');
+  }
+
+  // Envejecimiento + limpieza cada segundo
+  setInterval(() => {
+    if(!rayos.length){
+      el('thunderCnt60').textContent = '0';
+      el('thunderCnt10').textContent = '0';
+      return;
+    }
+    const now = Date.now();
+    let n60=0, n10=0;
+    for(let i=rayos.length-1; i>=0; i--){
+      const s = rayos[i];
+      const age = now - s.t;
+      if(age > MAX_AGE_MS){
+        try{ capaRayos.removeLayer(s.marker); }catch(e){}
+        rayos.splice(i,1);
+        continue;
+      }
+      const ele = s.marker.getElement()?.querySelector('.rayo-mk');
+      if(ele){
+        ele.classList.remove('old','older','oldest');
+        if(age > 15*60*1000)      ele.classList.add('oldest');
+        else if(age > 5*60*1000)  ele.classList.add('older');
+        else if(age > 60*1000)    ele.classList.add('old');
+      }
+      if(age <= 60*1000) n60++;
+      if(age <= 10*60*1000) n10++;
+    }
+    el('thunderCnt60').textContent = n60.toLocaleString('es-ES');
+    el('thunderCnt10').textContent = n10.toLocaleString('es-ES');
+  }, 1000);
+
+  function connect(){
+    clearTimeout(reconnectTimer);
+    if(ws){ try{ ws.close(); }catch(e){} ws=null; }
+    const host = REGION_HOSTS[Math.floor(Math.random()*REGION_HOSTS.length)];
+    setStatus(false, 'Conectando a ' + host + '…');
+    try{
+      ws = new WebSocket('wss://' + host + '/');
+    }catch(e){
+      setStatus(false, 'Error al abrir WS');
+      if(conectando) reconnectTimer = setTimeout(connect, 3000);
+      return;
+    }
+    ws.onopen  = () => { setStatus(true, 'Conectado'); ws.send('{"a":111}'); };
+    ws.onclose = () => {
+      setStatus(false, conectando ? 'Desconectado, reintentando…' : 'Detenido');
+      if(conectando) reconnectTimer = setTimeout(connect, 3000);
+    };
+    ws.onerror = () => setStatus(false, 'Error de conexión');
+    ws.onmessage = (ev) => {
+      try{
+        const raw = bo_decode(ev.data);
+        const msg = JSON.parse(raw);
+        if(typeof msg.lat === 'number' && typeof msg.lon === 'number'){
+          const b = REGION_BBOX[currentRegion];
+          if(msg.lon>=b[0][0] && msg.lon<=b[1][0] && msg.lat>=b[0][1] && msg.lat<=b[1][1]){
+            const t = msg.time ? Math.floor(msg.time/1e6) : Date.now();
+            const nSig = Array.isArray(msg.sig) ? msg.sig.length : 0;
+            const pol  = typeof msg.pol === 'number' ? msg.pol : 0;
+            addStrike(msg.lat, msg.lon, t, nSig, pol);
+          }
+        }
+      }catch(e){ /* ignorar */ }
+    };
+  }
+
+  function detener(){
+    conectando = false;
+    clearTimeout(reconnectTimer); reconnectTimer = null;
+    if(ws){ try{ ws.close(); }catch(e){} ws=null; }
+    setStatus(false, 'Detenido');
+    el('btnThunderConectar').disabled = false;
+    el('btnThunderDetener').disabled = true;
+    releaseWakeLock();
+  }
+
+  /* --- Screen Wake Lock: mientras estemos conectados, evita que la pantalla
+     se apague. Así el navegador móvil no suspende la pestaña ni cierra el
+     WebSocket. Si el usuario cambia de app o bloquea a mano, el navegador
+     lo suspende igual: cuando la app vuelva a ser visible, el listener de
+     visibilitychange reintenta conectar. --- */
+  async function requestWakeLock(){
+    if(!('wakeLock' in navigator)) return;
+    try{
+      wakeLock = await navigator.wakeLock.request('screen');
+      wakeLock.addEventListener('release', () => { wakeLock = null; });
+    }catch(e){
+      console.warn('Wake Lock no disponible:', e);
+    }
+  }
+  function releaseWakeLock(){
+    if(wakeLock){
+      try{ wakeLock.release(); }catch(e){}
+      wakeLock = null;
+    }
+  }
+
+  /* Reintento al volver de segundo plano: el SO puede haber suspendido la
+     pestaña y cerrado el WebSocket. En cuanto la app vuelve a ser visible
+     y todavía "queremos" estar conectados, retomamos automáticamente. */
+  document.addEventListener('visibilitychange', () => {
+    if(document.visibilityState === 'visible' && conectando){
+      // reintentar wake lock (se libera al ocultarse la pestaña)
+      requestWakeLock();
+      // si el ws no está abierto, reconectar ya sin esperar al backoff
+      const abierto = ws && (ws.readyState === WebSocket.OPEN || ws.readyState === WebSocket.CONNECTING);
+      if(!abierto){
+        clearTimeout(reconnectTimer);
+        connect();
+      }
+    }
+  });
+
+  function limpiarRayos(){
+    rayos.forEach(s => { try{ capaRayos.removeLayer(s.marker); }catch(e){} });
+    rayos.length = 0;
+    total = 0;
+    el('thunderCnt60').textContent = '0';
+    el('thunderCnt10').textContent = '0';
+    el('thunderCntTot').textContent = '0';
+    el('thunderLast').textContent = '—';
+  }
+
+  // KMZ
+  function xmlEsc(s){
+    return String(s).replace(/[<>&'"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;',"'":'&apos;','"':'&quot;'})[c]);
+  }
+  function buildKML(list, title){
+    const pms = list.map(s => {
+      const when = new Date(s.t).toISOString();
+      const name = 'Rayo ' + fmtLocal(s.t);
+      const desc = `Hora local (${tz}): ${fmtLocal(s.t)}<br>UTC: ${fmtUTC(s.t)}<br>Intensidad: ${intLabel(s.nSig)}<br>Polaridad: ${polTxt(s.pol)}<br>Lat: ${s.lat.toFixed(5)}<br>Lon: ${s.lon.toFixed(5)}`;
+      return `  <Placemark>
+    <name>${xmlEsc(name)}</name>
+    <description><![CDATA[${desc}]]></description>
+    <styleUrl>#rayo</styleUrl>
+    <TimeStamp><when>${when}</when></TimeStamp>
+    <Point><coordinates>${s.lon},${s.lat},0</coordinates></Point>
+  </Placemark>`;
+    }).join('\n');
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>${xmlEsc(title)}</name>
+  <Style id="rayo">
+    <IconStyle>
+      <color>ff4ad5ff</color>
+      <scale>1.2</scale>
+      <Icon><href>http://maps.google.com/mapfiles/kml/shapes/electronics.png</href></Icon>
+    </IconStyle>
+  </Style>
+${pms}
+</Document>
+</kml>`;
+  }
+  function triggerDownload(blob, fname){
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = fname;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+  }
+  async function descargarKMZ(list, etiqueta){
+    if(!list.length){ alert('No hay rayos que descargar en la vista actual.'); return; }
+    if(typeof JSZip === 'undefined'){ alert('JSZip no se ha cargado.'); return; }
+    const kml = buildKML(list, `Rayos ${etiqueta} (${list.length}) - ${fmtLocal(Date.now())}`);
+    const zip = new JSZip();
+    zip.file('doc.kml', kml);
+    const blob = await zip.generateAsync({type:'blob', mimeType:'application/vnd.google-earth.kmz'});
+    const pad = n => String(n).padStart(2,'0');
+    const d = new Date();
+    const stamp = `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}_${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;
+    triggerDownload(blob, `rayos_${etiqueta.replace(/\s+/g,'_')}_${stamp}.kmz`);
+  }
+  window.__descargarRayoKMZ = function(id){
+    const s = rayos.find(x => x.id === id);
+    if(s) descargarKMZ([s], 'individual');
+  };
+
+  // Wiring
+  el('thunderBtn').addEventListener('click', () => {
+    thunderOpen = !thunderOpen;
+    const panel = el('thunderPanel');
+    const btn = el('thunderBtn');
+    if(thunderOpen){
+      panel.style.display = 'block';
+      btn.classList.add('open');
+      btn.textContent = '⚡ Ocultar rayos';
+      if(typeof L === 'undefined'){
+        setStatus(false, 'No se pudo cargar Leaflet');
+        return;
+      }
+      initThunderMap();
+      setTimeout(() => {
+        thunderMap.invalidateSize();
+        panel.scrollIntoView({behavior:'smooth', block:'start'});
+      }, 80);
+    } else {
+      panel.style.display = 'none';
+      btn.classList.remove('open');
+      btn.textContent = '⚡ Rayos en tiempo real';
+    }
+    actualizarBotonInicio();
+  });
+
+  el('btnThunderConectar').addEventListener('click', () => {
+    conectando = true;
+    el('btnThunderConectar').disabled = true;
+    el('btnThunderDetener').disabled = false;
+    initThunderMap();
+    connect();
+    requestWakeLock();
+  });
+  el('btnThunderDetener').addEventListener('click', detener);
+
+  el('thunderRegion').addEventListener('change', e => {
+    currentRegion = e.target.value;
+    el('thunderRegionLabel').textContent = REGION_LABEL[currentRegion];
+    // al cambiar de zona limpiamos y recentramos
+    limpiarRayos();
+    if(thunderMap){
+      const c = REGION_CENTER[currentRegion];
+      thunderMap.setView(c, 4);
+    }
+    if(conectando) connect();
+  });
+
+  el('btnThunderKmz').addEventListener('click', () => {
+    if(!thunderMap){ alert('Abre el mapa primero.'); return; }
+    const b = thunderMap.getBounds();
+    const list = rayos.filter(s => b.contains([s.lat, s.lon]));
+    descargarKMZ(list, 'vista');
+  });
+  el('btnThunderSalamanca').addEventListener('click', () => {
+    initThunderMap();
+    // Provincia de Salamanca (Castilla y León, España)
+    thunderMap.fitBounds([[40.05, -6.87], [41.35, -5.13]], {padding:[10,10]});
+  });
+  el('btnThunderLimpiar').addEventListener('click', limpiarRayos);
+})();
+
+wireSearch();
+useMyLocation();
+
+refreshTimer = setInterval(() => { if(current) loadWeather(); }, 10 * 60 * 1000);
+clockTimer = setInterval(updateClockLabel, 30 * 1000);
+</script>
+</body>
+</html>
